@@ -26,5 +26,6 @@ body {
 @layer utilities {
   :root {
     --width: 724px;
+    --avatar: clamp(5.16rem, calc(3.72rem + 7.22vw), 9.31rem);
   }
 }

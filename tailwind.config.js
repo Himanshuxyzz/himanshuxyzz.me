@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -11,6 +14,10 @@ module.exports = {
       spacing: {
         'feature':'var(--width)',
         'content':'calc(var(--width)*0.84)',
+        'avatar':'var(--avatar)',
+      },
+      minHeight:{
+        'half-avatar':'calc(var(--avatar)*0.5)',
       }
     },
   },

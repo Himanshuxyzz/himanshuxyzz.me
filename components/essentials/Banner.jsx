@@ -4,10 +4,9 @@ import React from "react";
 const Banner = () => {
   return (
     <div className="relative w-full aspect-[3/1] saturate-150">
-      <Image layout="fill" src={"/banner.svg"} alt="banner" />
+      <Image fill src={"/banner.svg"} alt="banner" />
     </div>
   );
 };
 
 export default Banner;
-
