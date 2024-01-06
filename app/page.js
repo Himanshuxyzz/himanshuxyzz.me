@@ -1,14 +1,12 @@
-import ContentWrapper from "@/components/ContentWrapper";
-import Navbar from "@/components/Navbar";
-import { ThemeSwitch } from "@/components/theme-toggle";
+import ContentWrapper from "@/components/layout/ContentWrapper";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <div className="h-full">
-      <Navbar />
-      <ContentWrapper className={"border border-black pt-2"}>
-        Hello
+    <section className="h-full">
+      <ContentWrapper className={"w-feature"}>
+        <Header />
       </ContentWrapper>
-    </div>
+    </section>
   );
 }
