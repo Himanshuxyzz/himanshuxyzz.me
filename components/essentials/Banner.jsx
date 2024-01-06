@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
+import banner from "@/public/banner.svg";
 
 const Banner = () => {
   return (
     <div className="relative w-full aspect-[3/1] saturate-150">
-      <Image fill src={"/banner.svg"} alt="banner" />
+      <Image fill src={banner} alt="banner" priority="true" />
     </div>
   );
 };

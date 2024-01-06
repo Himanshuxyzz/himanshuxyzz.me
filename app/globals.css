@@ -14,6 +14,10 @@ body {
   body {
     @apply dark:bg-[#16191d] dark:text-[#f1f3f5] text-[#030507] bg-[#f8f9fa];
   }
+  a {
+    text-decoration-thickness: 4px;
+    text-underline-offset: 2px;
+  }
 }
 
 /* The components layer contains styles for reusable components like buttons, cards, and forms. */
@@ -27,5 +31,8 @@ body {
   :root {
     --width: 724px;
     --avatar: clamp(5.16rem, calc(3.72rem + 7.22vw), 9.31rem);
+    --bg-link-fill: #c08;
+    --text-fluid-1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1rem);
+    --text-1: #f1f3f5;
   }
 }
