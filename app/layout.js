@@ -5,8 +5,8 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "next-tailwind-starter",
-  description: "starter code for next tailwind",
+  title: "himanshuxyzz",
+  description: "portfolio",
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
             storageKey="theme"
-            >{children}</ThemeProvider>
+            >
+              {children}
+              </ThemeProvider>
       </body>
     </html>
   );

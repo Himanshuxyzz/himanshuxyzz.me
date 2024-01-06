@@ -1,10 +1,13 @@
+import Navbar from "@/components/Navbar";
 import { ThemeSwitch } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
-  <main className="">
-    <ThemeSwitch/>
-    <h1 className='text-3xl text-center font-mono font-semibold bg-gray-200 p-3'>Hello 👋 - next-tailwind-starter</h1>
-  </main> 
-   )
+    <div className="h-full">
+      <Navbar />
+      <main className="h-full pt-40 border border-black">
+        loremnfjbdfbfjdbfj
+      </main>
+    </div>
+  );
 }
