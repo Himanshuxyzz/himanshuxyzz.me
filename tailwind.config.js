@@ -8,7 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      spacing: {
+        'feature':'var(--width)',
+        'content':'calc(var(--width)*0.84)',
+      }
     },
   },
   plugins: [],

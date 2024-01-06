@@ -7,10 +7,24 @@ body {
   height: 100%;
 }
 
+/* The base layer contains the base styles for elements like headings, paragraphs, and links. */
+/* Use the base layer to define styles that apply to all instances of a particular element type across your application. */
 /* default styles for dark and light mode */
-
 @layer base {
   body {
     @apply dark:bg-[#16191d] dark:text-[#f1f3f5] text-[#030507] bg-[#f8f9fa];
+  }
+}
+
+/* The components layer contains styles for reusable components like buttons, cards, and forms. */
+/* Use the components layer to define styles that are specific to individual components and are not intended to be applied globally. */
+@layer components {
+}
+
+/* The utilities layer contains all the utility classes provided by Tailwind CSS. */
+/* Use the utilities layer to define responsive and non-responsive utility classes that can be applied directly to HTML elements. */
+@layer utilities {
+  :root {
+    --width: 724px;
   }
 }
