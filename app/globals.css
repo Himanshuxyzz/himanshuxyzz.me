@@ -5,6 +5,7 @@
 html,
 body {
   height: 100%;
+  text-rendering: optimizeSpeed;
 }
 
 /* The base layer contains the base styles for elements like headings, paragraphs, and links. */
@@ -12,7 +13,7 @@ body {
 /* default styles for dark and light mode */
 @layer base {
   body {
-    @apply dark:bg-[#16191d] dark:text-[#f1f3f5] text-[#030507] bg-[#f8f9fa];
+    @apply dark:bg-[#16191d] dark:text-[#f1f3f5] text-[#030507] bg-[#f8f9fa] saturate-100;
   }
   a {
     text-decoration-thickness: 4px;
@@ -31,8 +32,9 @@ body {
   :root {
     --width: 724px;
     --avatar: clamp(5.16rem, calc(3.72rem + 7.22vw), 9.31rem);
-    --bg-link-fill: #c08;
+    --bg-link-fill: #de1d8d;
     --text-fluid-1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1rem);
+    --text-fluid-3: clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem);
     --text-1: #f1f3f5;
   }
 }

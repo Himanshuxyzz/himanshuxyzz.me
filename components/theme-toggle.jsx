@@ -37,9 +37,21 @@ export const ThemeSwitch = () => {
 };
 
 const Dark = () => (
-  <Image width={40} height={40} src={"/moon.svg"} alt="dark mode" />
+  <Image
+    className="saturate-200"
+    width={40}
+    height={40}
+    src={"/moon.svg"}
+    alt="dark mode"
+  />
 );
 
 const Light = () => (
-  <Image width={40} height={40} src={"/sun.svg"} alt="light mode" />
+  <Image
+    className="saturate-200"
+    width={40}
+    height={40}
+    src={"/sun.svg"}
+    alt="light mode"
+  />
 );

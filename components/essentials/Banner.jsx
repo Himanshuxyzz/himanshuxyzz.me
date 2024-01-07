@@ -4,8 +4,14 @@ import banner from "@/public/banner.svg";
 
 const Banner = () => {
   return (
-    <div className="relative w-full aspect-[3/1] saturate-150">
-      <Image fill src={banner} alt="banner" priority="true" />
+    <div className="relative w-full aspect-[3/1] ">
+      <Image
+        className="saturate-200"
+        fill
+        src={banner}
+        alt="banner"
+        priority="true"
+      />
     </div>
   );
 };

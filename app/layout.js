@@ -1,10 +1,13 @@
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import Navbar from "@/components/Navbar";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 
 const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({
+  subsets:["latin"]
+})
 
 export const metadata = {
   title: "himanshuxyzz",
@@ -14,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={outfit.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
