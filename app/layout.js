@@ -1,10 +1,9 @@
-import { Inter, Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/common/Navbar";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 
-const inter = Inter({ subsets: ["latin"] });
 const outfit = Outfit({
   subsets:["latin"]
 })

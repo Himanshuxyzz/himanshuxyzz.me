@@ -5,12 +5,12 @@ import AvatarWrapper from "../../components/layout/AvatarWrapper";
 
 const Header = () => {
   return (
-    <div>
+    <header>
       <Banner />
-      <ContentWrapper className={"w-content px-4 grid"}>
+      <ContentWrapper className={"w-content px-4"}>
         <AvatarWrapper />
       </ContentWrapper>
-    </div>
+    </header>
   );
 };
 

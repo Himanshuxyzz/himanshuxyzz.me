@@ -19,6 +19,10 @@ body {
     text-decoration-thickness: 4px;
     text-underline-offset: 2px;
   }
+
+  .bio-detail svg {
+    @apply stroke-[0.5px];
+  }
 }
 
 /* The components layer contains styles for reusable components like buttons, cards, and forms. */
