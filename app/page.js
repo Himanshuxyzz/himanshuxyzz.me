@@ -1,12 +1,11 @@
-import ContentWrapper from "@/components/layout/ContentWrapper";
-import Header from "./components/Header";
+import Header from "./_components/Header";
+import MainSection from "./_components/MainSection";
 
 export default function Home() {
   return (
     <section className="h-full">
-      <ContentWrapper className={"w-feature"}>
         <Header />
-      </ContentWrapper>
+        <MainSection/>
     </section>
   );
 }
