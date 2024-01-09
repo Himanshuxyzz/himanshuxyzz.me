@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../essentials/Logo";
-import { ThemeSwitch } from "../theme-toggle";
+import { ThemeSwitch } from "../essentials/theme-toggle";
 
 const Navbar = () => {
   return (

@@ -1,7 +1,7 @@
 import Banner from "@/components/essentials/Banner";
 import React from "react";
 import ContentWrapper from "@/components/layout/ContentWrapper";
-import AvatarWrapper from "../../components/layout/AvatarWrapper";
+import AvatarWrapper from "../layout/AvatarWrapper";
 
 const Header = () => {
   return (
