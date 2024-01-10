@@ -6,7 +6,9 @@ const Main = ({ children }) => {
   return (
     <section className="h-full">
       <Header />
-      <ContentSection>{children}</ContentSection>
+      <ContentSection>
+        {children}
+        </ContentSection>
     </section>
   );
 };
