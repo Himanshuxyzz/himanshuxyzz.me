@@ -52,27 +52,35 @@ const Mood = ({ MoodEmoji, MoodText }) => {
   );
 };
 
+const ContentContainer = ({ children }) => {
+  return <div className="flex flex-col gap-y-1 leading-tight">{children}</div>;
+};
+
+const Content = ({ children }) => {
+  return <p className="mb-4">{children}</p>;
+};
+
 const About = () => {
   return (
     <Article>
       <UserProfile />
-      <div className="flex flex-col gap-y-1 leading-tight">
+      <ContentContainer>
         <AuthorInfo author={"Himanshu"} date={"28.May.2023"} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <Title>Hello World 👋</Title>
-        <p className="mb-4">
+        <Content>
           I am{" "}
           <span className=" font-bold text-link-bg decoration-4 underline-offset-2">
             Himanshu Toppo
           </span>
           , based in india 🇮🇳 , i am a developer who loves to bring ideas to
           life using modern web technologies, i enjoy learning new tools and
-          technologies , and i am Currently looking into learning backend and
+          technologies , and currently into learning backend and
           databases while also solidifying my knowledge of front-end
           development.
-        </p>
+        </Content>
         <FeatureImg image={feature} />
-      </div>
+      </ContentContainer>
     </Article>
   );
 };
