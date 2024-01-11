@@ -1,12 +1,10 @@
 import React from "react";
 import About from "./_components/About";
 
-const page = ({ slug }) => {
-  console.log(slug);
+const page = () => {
   return (
     <>
       <About />
-      {/* <About /> */}
     </>
   );
 };
