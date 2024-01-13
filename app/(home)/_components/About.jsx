@@ -5,7 +5,7 @@ import Article from "@/components/common/Article";
 import FeatureImg from "@/components/common/FeatureImg";
 import { cn } from "@/lib/utils";
 
-const UserProfile = () => {
+export const UserProfile = () => {
   return (
     <>
       <div className="w-10 h-10">
@@ -19,20 +19,20 @@ const UserProfile = () => {
   );
 };
 
-const Title = ({ className, children }) => {
+export const Title = ({ className, children }) => {
   return (
     <>
-      <h2 className={cn("mb-1 font-bold text-fluid--1", className)}>
+      <h2 className={cn("mb-2 font-bold text-heading-fluid-1", className)}>
         {children}
       </h2>
     </>
   );
 };
 
-const AuthorInfo = ({ author, date }) => {
+export const AuthorInfo = ({ author, date }) => {
   return (
-    <div className="flex gap-x-2 text-fluid--1 items-center text-[#868e96]">
-      <a className="hover:underline font-bold text-[#495057] dark:text-[#f1f3f5]">
+    <div className="flex gap-x-2 text-fluid--1 items-center dark:text-[#868e96] text-[#495057]">
+      <a className="hover:underline font-bold text-[#030507] dark:text-[#f1f3f5] mb-1">
         {author}
       </a>
       <span>.</span>
@@ -41,7 +41,7 @@ const AuthorInfo = ({ author, date }) => {
   );
 };
 
-const Mood = ({ MoodEmoji, MoodText }) => {
+export const Mood = ({ MoodEmoji, MoodText }) => {
   return (
     <div className="mb-2">
       <div className="py-1 px-3 inline-flex items-center gap-1 bg-[#dee2e6] dark:bg-[#495057] rounded-full">
@@ -52,7 +52,7 @@ const Mood = ({ MoodEmoji, MoodText }) => {
   );
 };
 
-const ContentContainer = ({ children }) => {
+export const ContentContainer = ({ children }) => {
   return <div className="flex flex-col gap-y-1 leading-tight">{children}</div>;
 };
 
@@ -62,7 +62,7 @@ const Content = ({ children }) => {
 
 const About = () => {
   return (
-    <Article>
+    <Article className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}>
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} date={"28.May.2023"} />
@@ -75,9 +75,8 @@ const About = () => {
           </span>
           , based in india 🇮🇳 , i am a developer who loves to bring ideas to
           life using modern web technologies, i enjoy learning new tools and
-          technologies , and currently into learning backend and
-          databases while also solidifying my knowledge of front-end
-          development.
+          technologies , and currently into learning backend and databases while
+          also solidifying my knowledge of front-end development.
         </Content>
         <FeatureImg image={feature} />
       </ContentContainer>

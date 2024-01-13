@@ -40,5 +40,6 @@ body {
     --text-fluid-1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1rem);
     --text-fluid-3: clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem);
     --text-1: #f1f3f5;
+    --text-heading-1: clamp(1.2rem, calc(1.07rem + 0.63vw), 1.56rem);
   }
 }

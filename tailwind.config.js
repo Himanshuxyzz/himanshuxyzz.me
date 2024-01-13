@@ -24,6 +24,7 @@ module.exports = {
       fontSize: {
         'fluid--1':'var(--text-fluid-1)',
         'fluid--3':'var(--text-fluid-3)',
+        'heading-fluid-1':'var(--text-heading-1)',
       },
     },
   },

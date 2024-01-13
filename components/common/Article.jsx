@@ -1,9 +1,13 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
-const Article = ({ children }) => {
+const Article = ({ children, className }) => {
   return (
     <article
-      className={` grid grid-cols-[auto_1fr] p-4 gap-2 rounded-lg max-w-full w-full dark:hover:bg-[#212529] hover:bg-[#f1f3f5] card-transition`}
+      className={cn(
+        "grid grid-cols-[auto_1fr] p-4 gap-2 rounded-lg max-w-full w-full mb-3",
+        className
+      )}
     >
       {children}
     </article>
