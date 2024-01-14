@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import Navbar from "@/components/common/Navbar";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import Main from "../components/common/Main";
+import Footer from "@/components/common/Footer";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,7 +29,10 @@ export default function RootLayout({ children }) {
           <main className="h-full">
             <Navbar />
             <SmoothScroll>
-              <Main>{children}</Main>
+              <Main>
+                {children}
+                <Footer />
+              </Main>
             </SmoothScroll>
           </main>
         </ThemeProvider>

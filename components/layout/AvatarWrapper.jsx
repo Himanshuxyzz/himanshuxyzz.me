@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import avatar from "@/public/avatar.webp";
 import bear from "@/public/bear.svg";
-import { bioDetails } from "@/lib/constant";
+import { bioDetailsIcon } from "@/lib/constant";
 
 export const Profile = ({ avatar }) => {
   return (
@@ -64,8 +64,8 @@ const Hobby = () => {
 const BioDetails = () => {
   return (
     <div className="flex gap-x-2 sm:gap-x-4 gap-y-1 items-center text-fluid--1 flex-wrap justify-center text-[#495057] dark:text-[#868E96] font-bold">
-      {Object.keys(bioDetails).map((key) => {
-        const detail = bioDetails[key];
+      {Object.keys(bioDetailsIcon).map((key) => {
+        const detail = bioDetailsIcon[key];
         return (
           <>
             <span
