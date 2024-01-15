@@ -29,6 +29,15 @@ const ArticleItem = ({ text, href, className }) => {
   );
 };
 
+const ArticleList = ({ title, children }) => {
+  return (
+    <>
+      <Title>{title}</Title>
+      <div className="space-y-2">{children}</div>
+    </>
+  );
+};
+
 const page = () => {
   return (
     <Article>
@@ -36,13 +45,13 @@ const page = () => {
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
-        <Title>Blog</Title>
-        <div className="space-y-2">
+
+        <ArticleList title={"Blog"}>
           <ArticleItem href={"#"} text={"Article - 1"} />
           <ArticleItem href={"#"} text={"Article - 1"} />
           <ArticleItem href={"#"} text={"Article - 1"} />
           <ArticleItem href={"#"} text={"Article - 1"} />
-        </div>
+        </ArticleList>
       </ContentContainer>
     </Article>
   );
