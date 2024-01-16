@@ -6,10 +6,10 @@ const NavTab = () => {
   return (
     <>
       <ul className="max-w-full grid grid-flow-col auto-cols-[1fr] items-center text-fluid--1 overflow-auto">
-        {NavLinkRoutes.map((navlink) => {
+        {NavLinkRoutes.map((navlink, idx) => {
           return (
             <li
-              key={navlink.id}
+              key={navlink.id + idx}
               className="dark:hover:bg-[#212529] hover:bg-[#f1f3f5]  flex-grow"
             >
               <NavLink

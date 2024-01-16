@@ -9,8 +9,10 @@ import {
 import Article from "@/components/common/Article";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { allBlogs } from "@/.contentlayer/generated";
+import { compareDesc, format, parseISO } from "date-fns";
 
-const ArticleItem = ({ text, href, className }) => {
+export const ArticleItem = ({ text, href, date, className }) => {
   return (
     <div
       className={cn("hover:bg-[#f1f3f5] dark:hover:bg-[#212529]", className)}
@@ -21,7 +23,7 @@ const ArticleItem = ({ text, href, className }) => {
             <span>{text}</span>
           </h2>
           <div className="text-sm font-medium dark:text-[#868e96] text-[#495057]">
-            13.01.2024
+            {!date ? "13.01.2024" : date}
           </div>
         </div>
       </Link>
@@ -29,7 +31,7 @@ const ArticleItem = ({ text, href, className }) => {
   );
 };
 
-const ArticleList = ({ title, children }) => {
+export const ArticleList = ({ title, children }) => {
   return (
     <>
       <Title>{title}</Title>
@@ -39,18 +41,28 @@ const ArticleList = ({ title, children }) => {
 };
 
 const page = () => {
+  const posts = allBlogs.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date))
+  );
+  // console.log(posts);
   return (
     <Article>
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
-
         <ArticleList title={"Blog"}>
-          <ArticleItem href={"#"} text={"Article - 1"} />
-          <ArticleItem href={"#"} text={"Article - 1"} />
-          <ArticleItem href={"#"} text={"Article - 1"} />
-          <ArticleItem href={"#"} text={"Article - 1"} />
+          <ArticleItem text={"Article - 1"} href={"#"} />
+          {posts.map((post, idx) => {
+            return (
+              <ArticleItem
+                key={post._id + idx}
+                text={post.title}
+                href={post.url}
+                date={format(parseISO(post.date), "LLLL d, yyyy")}
+              />
+            );
+          })}
         </ArticleList>
       </ContentContainer>
     </Article>

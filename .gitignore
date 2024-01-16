@@ -39,3 +39,7 @@ next-env.d.ts
 # misc
 
 /todos.md
+
+#content layer builds
+
+.contentLayer
