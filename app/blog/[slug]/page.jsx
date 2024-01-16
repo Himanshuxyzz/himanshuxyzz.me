@@ -9,8 +9,8 @@ import {
   Mood,
   Title,
   UserProfile,
+  Content,
 } from "@/app/(home)/_components/About";
-import { Content } from "next/font/google";
 
 const page = ({ params }) => {
   const blog = allBlogs.find(
@@ -25,7 +25,9 @@ const page = ({ params }) => {
         <AuthorInfo author={"Himanshu"} date={blog.date} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <Title>{blog.title}</Title>
-        <MDXContent />
+        <Content>
+          <MDXContent />
+        </Content>
       </ContentContainer>
     </Article>
   );
