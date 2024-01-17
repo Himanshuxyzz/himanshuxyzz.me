@@ -56,7 +56,7 @@ const page = () => {
           {posts.map((post, idx) => {
             return (
               <ArticleItem
-                key={post._id + idx}
+                key={post._id}
                 text={post.title}
                 href={post.url}
                 date={format(parseISO(post.date), "LLLL d, yyyy")}

@@ -57,7 +57,7 @@ export const ContentContainer = ({ children }) => {
 };
 
 export const Content = ({ children }) => {
-  return <p className="mb-4">{children}</p>;
+  return <div className="mb-4">{children}</div>;
 };
 
 const About = () => {
