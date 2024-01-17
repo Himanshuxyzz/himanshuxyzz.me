@@ -3,7 +3,7 @@ import avatar from "@/public/avatar.webp";
 import feature from "@/public/feature-img.webp";
 import Article from "@/components/common/Article";
 import FeatureImg from "@/components/common/FeatureImg";
-import { cn } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 
 export const UserProfile = () => {
   return (
@@ -65,7 +65,10 @@ const About = () => {
     <Article className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}>
       <UserProfile />
       <ContentContainer>
-        <AuthorInfo author={"Himanshu"} date={"28.May.2023"} />
+        <AuthorInfo
+          author={"Himanshu"}
+          date={formatDate(new Date().toISOString())}
+        />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <Title>Hello World 👋</Title>
         <Content>

@@ -6,8 +6,9 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 const NavLink = ({ href, name, key }) => {
   const currentPath = usePathname();
-  const isActive = currentPath === href;
-  //   console.log(isActive);
+  const isActive =
+    currentPath.startsWith(href) &&
+    (currentPath[href.length] === "/" || currentPath.length === href.length);
   return (
     <Link
       key={key}

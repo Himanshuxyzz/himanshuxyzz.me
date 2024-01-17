@@ -8,7 +8,7 @@ import {
 } from "@/app/(home)/_components/About";
 import Article from "@/components/common/Article";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 import { allBlogs } from "@/.contentlayer/generated";
 import { compareDesc, format, parseISO } from "date-fns";
 
@@ -49,17 +49,19 @@ const page = () => {
     <Article>
       <UserProfile />
       <ContentContainer>
-        <AuthorInfo author={"Himanshu"} />
+        <AuthorInfo
+          author={"Himanshu"}
+          date={formatDate(new Date().toISOString())}
+        />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <ArticleList title={"Blog"}>
-          <ArticleItem text={"Article - 1"} href={"#"} />
           {posts.map((post, idx) => {
             return (
               <ArticleItem
                 key={post._id}
                 text={post.title}
                 href={post.url}
-                date={format(parseISO(post.date), "LLLL d, yyyy")}
+                date={formatDate(post.date)}
               />
             );
           })}

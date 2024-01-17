@@ -11,6 +11,7 @@ import {
   UserProfile,
   Content,
 } from "@/app/(home)/_components/About";
+import { formatDate } from "@/lib/utils";
 
 const Blog = ({ params }) => {
   const blog = allBlogs.find(
@@ -23,7 +24,7 @@ const Blog = ({ params }) => {
     <Article>
       <UserProfile />
       <ContentContainer>
-        <AuthorInfo author={"Himanshu"} date={blog.date} />
+        <AuthorInfo author={"Himanshu"} date={formatDate(blog.date)} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <Title>{blog.title}</Title>
         <Content>
