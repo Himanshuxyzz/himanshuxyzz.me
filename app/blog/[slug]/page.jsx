@@ -12,11 +12,12 @@ import {
   Content,
 } from "@/app/(home)/_components/About";
 
-const page = ({ params }) => {
+const Blog = ({ params }) => {
   const blog = allBlogs.find(
     (blog) => blog._raw.sourceFileName.replace(".mdx", "") === params.slug
   );
-  const MDXContent = useMDXComponent(blog.body.code);
+  if (!blog) notFound();
+  const MdxContent = useMDXComponent(blog.body.code);
 
   return (
     <Article>
@@ -26,14 +27,14 @@ const page = ({ params }) => {
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <Title>{blog.title}</Title>
         <Content>
-          <MDXContent />
+          <MdxContent />
         </Content>
       </ContentContainer>
     </Article>
   );
 };
 
-export default page;
+export default Blog;
 
 export const generateStaticParams = async () =>
   allBlogs.map((article) => ({ slug: article._raw.flattenedPath }));
@@ -43,7 +44,6 @@ export const generateMetadata = async ({ params }) => {
     (blog) => blog._raw.sourceFileName.replace(".mdx", "") === params.slug
   );
   if (!blog) notFound();
-  //   console.log(params.slug);
   return {
     title: blog?.title,
   };
