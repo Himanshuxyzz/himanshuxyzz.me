@@ -12,7 +12,7 @@ const Footer = () => {
             return (
               <>
                 <Link
-                  className="w-10 h-10 grid place-items-center rounded-md hover:bg-surface-4"
+                  className="w-10 h-10 grid place-items-center rounded-md hover:bg-surface-4 hover:scale-125 transition-all ease duration-200"
                   href={detail.link}
                   rel="noopener noreferrer"
                   target="_blank"
