@@ -27,7 +27,7 @@ const Blog = ({ params }) => {
         <AuthorInfo author={"Himanshu"} date={formatDate(blog.date)} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <Title>{blog.title}</Title>
-        <Content>
+        <Content className={"prose prose-dark dark:prose-light"}>
           <MdxContent />
         </Content>
       </ContentContainer>

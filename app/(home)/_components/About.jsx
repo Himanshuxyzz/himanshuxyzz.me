@@ -56,8 +56,8 @@ export const ContentContainer = ({ children }) => {
   return <div className="flex flex-col gap-y-1 leading-tight">{children}</div>;
 };
 
-export const Content = ({ children }) => {
-  return <div className="mb-4">{children}</div>;
+export const Content = ({ children, className }) => {
+  return <div className={cn("mb-4", className)}>{children}</div>;
 };
 
 const About = () => {

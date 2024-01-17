@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
           storageKey="theme"
         >
-          <main className="h-full">
+          <main>
             <Navbar />
             <SmoothScroll>
               <Main>

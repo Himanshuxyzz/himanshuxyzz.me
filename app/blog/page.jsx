@@ -10,20 +10,20 @@ import Article from "@/components/common/Article";
 import Link from "next/link";
 import { cn, formatDate } from "@/lib/utils";
 import { allBlogs } from "@/.contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
+import { compareDesc } from "date-fns";
 
 export const ArticleItem = ({ text, href, date, className }) => {
   return (
     <div
-      className={cn("hover:bg-[#f1f3f5] dark:hover:bg-[#212529]", className)}
+      className={cn(" hover:bg-[#f1f3f5] dark:hover:bg-[#212529]", className)}
     >
       <Link href={href}>
-        <div className=" border-b-2 border-b-link-bg w-full flex justify-between py-3 md:py-[8px] flex-col md:flex-row">
+        <div className=" border-b-2 border-b-link-bg w-full flex justify-between px-1 py-2 md:py-[8px] flex-col md:flex-row">
           <h2 className="font-semibold text-md">
             <span>{text}</span>
           </h2>
           <div className="text-sm font-medium dark:text-[#868e96] text-[#495057]">
-            {!date ? "13.01.2024" : date}
+            {date}
           </div>
         </div>
       </Link>
