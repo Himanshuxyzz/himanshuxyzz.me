@@ -12,6 +12,7 @@ import {
   Content,
 } from "@/app/(home)/_components/About";
 import { formatDate } from "@/lib/utils";
+import MdxComponent from "@/components/mdx";
 
 const Blog = ({ params }) => {
   const blog = allBlogs.find(
@@ -26,9 +27,13 @@ const Blog = ({ params }) => {
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} date={formatDate(blog.date)} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
-        <Title>{blog.title}</Title>
-        <Content className={"prose prose-dark dark:prose-light"}>
-          <MdxContent />
+        <Title className={"text-center"}>{blog.title}</Title>
+        <Content
+          className={
+            "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
+          }
+        >
+          <MdxContent components={MdxComponent} />
         </Content>
       </ContentContainer>
     </Article>

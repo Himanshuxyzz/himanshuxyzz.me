@@ -22,9 +22,9 @@ export const UserProfile = () => {
 export const Title = ({ className, children }) => {
   return (
     <>
-      <h2 className={cn("mb-2 font-bold text-heading-fluid-1", className)}>
+      <h1 className={cn("mb-2 font-bold text-heading-fluid-1", className)}>
         {children}
-      </h2>
+      </h1>
     </>
   );
 };

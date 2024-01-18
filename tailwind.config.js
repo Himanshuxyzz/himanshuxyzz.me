@@ -29,12 +29,34 @@ module.exports = {
       typography: {
         dark: {
           css: {
-            color: "#030507",
+            p: {
+              color: "#F1F3F5",
+            },
+            h2: {
+              color:"#F1F3F5",
+            },
+            a: {
+              color: "#de1d8d",
+            },
+            strong: {
+              color:"#F1F3F5",
+            }
           },
         },
         light: {
           css: {
-            color: "#F1F3F5",
+            p: {
+              color: "#030507",
+            },
+             h2: {
+              color:"#030507",
+            },
+             a: {
+              color: "#de1d8d",
+            },
+            strong: {
+              color:"#030507",
+            },
           },
         },
       },

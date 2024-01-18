@@ -23,6 +23,9 @@ body {
   .bio-detail svg {
     @apply stroke-[0.5px];
   }
+  .blog-article-img {
+    @apply rounded-md h-auto w-full mt-4;
+  }
 }
 
 /* The components layer contains styles for reusable components like buttons, cards, and forms. */
