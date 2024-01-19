@@ -5,7 +5,7 @@ import {
   Mood,
   Title,
   UserProfile,
-} from "@/app/(home)/_components/About";
+} from "@/app/(home)/page";
 import Article from "@/components/common/Article";
 import Link from "next/link";
 import { cn, formatDate } from "@/lib/utils";

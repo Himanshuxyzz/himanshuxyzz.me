@@ -10,7 +10,7 @@ import {
   Title,
   UserProfile,
   Content,
-} from "@/app/(home)/_components/About";
+} from "@/app/(home)/page";
 import { formatDate } from "@/lib/utils";
 import MdxComponent from "@/components/mdx";
 
