@@ -4,6 +4,7 @@ import feature from "@/public/feature-img.webp";
 import Article from "@/components/common/Article";
 import FeatureImg from "@/components/common/FeatureImg";
 import { cn, formatDate } from "@/lib/utils";
+import Link from "next/link";
 
 export const UserProfile = () => {
   return (
@@ -32,9 +33,13 @@ export const Title = ({ className, children }) => {
 export const AuthorInfo = ({ author, date }) => {
   return (
     <div className="flex gap-x-2 text-fluid--1 items-center dark:text-[#868e96] text-[#495057]">
-      <a className="hover:underline font-bold text-[#030507] dark:text-[#f1f3f5] mb-1">
+      <Link
+        href="/"
+        className="hover:underline font-bold text-[#030507] dark:text-[#f1f3f5] mb-1"
+        scroll={false}
+      >
         {author}
-      </a>
+      </Link>
       <span>.</span>
       <p className="font-bold">{date || Date.now()}</p>
     </div>

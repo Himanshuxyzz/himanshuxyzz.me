@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <div className="relative w-full aspect-[3/1] ">
       <Image
-        className="saturate-200"
+        className="saturate-200 "
         fill
         src={banner}
         alt="banner"

@@ -7,7 +7,7 @@ import { bioDetailsIcon } from "@/lib/constant";
 
 export const Profile = ({ avatar }) => {
   return (
-    <div className="absolute top-0 left-0 -translate-y-1/2 w-avatar h-avatar ">
+    <div className="absolute top-0 left-0 -translate-y-1/2 w-avatar h-avatar overflow-hidden">
       <Image
         className="object-cover aspect-square rounded-full border-4 border-[#030507] dark:border-[#f1f3f5] w-full h-full saturate-150"
         src={avatar}

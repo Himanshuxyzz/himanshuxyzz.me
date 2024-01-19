@@ -19,18 +19,17 @@ body {
     text-decoration-thickness: 4px;
     text-underline-offset: 2px;
   }
+}
 
+/* The components layer contains styles for reusable components like buttons, cards, and forms. */
+/* Use the components layer to define styles that are specific to individual components and are not intended to be applied globally. */
+@layer components {
   .bio-detail svg {
     @apply stroke-[0.5px];
   }
   .blog-article-img {
     @apply rounded-md h-auto w-full mt-4;
   }
-}
-
-/* The components layer contains styles for reusable components like buttons, cards, and forms. */
-/* Use the components layer to define styles that are specific to individual components and are not intended to be applied globally. */
-@layer components {
 }
 
 /* The utilities layer contains all the utility classes provided by Tailwind CSS. */
