@@ -25,6 +25,7 @@ const Footer = () => {
           })}
         </div>
       </div>
+      <div className="animate-pulse">Song playing</div>
     </footer>
   );
 };

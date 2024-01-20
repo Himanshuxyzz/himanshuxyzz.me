@@ -7,6 +7,7 @@ import Main from "../components/common/Main";
 import Footer from "@/components/common/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
+import Skeleton from "@/components/common/Skeleton";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -32,7 +33,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <SmoothScroll>
               <Main>
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={<p className="text-center">Loading....</p>}>
                   {children}
                   </Suspense>
                 <Footer />

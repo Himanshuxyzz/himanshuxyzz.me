@@ -43,6 +43,7 @@ const Dark = () => (
     height={40}
     src={"/moon.svg"}
     alt="dark mode"
+    priority
   />
 );
 
@@ -53,5 +54,6 @@ const Light = () => (
     height={40}
     src={"/sun.svg"}
     alt="light mode"
+    priority
   />
 );
