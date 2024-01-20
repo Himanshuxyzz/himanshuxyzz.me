@@ -5,6 +5,8 @@ import Navbar from "@/components/common/Navbar";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import Main from "../components/common/Main";
 import Footer from "@/components/common/Footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -30,7 +32,9 @@ export default function RootLayout({ children }) {
             <Navbar />
             <SmoothScroll>
               <Main>
-                {children}
+                <Suspense fallback={<Loading />}>
+                  {children}
+                  </Suspense>
                 <Footer />
               </Main>
             </SmoothScroll>

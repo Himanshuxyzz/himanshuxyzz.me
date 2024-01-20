@@ -10,7 +10,7 @@ const Banner = () => {
         fill
         src={banner}
         alt="banner"
-        priority="true"
+        priority
       />
     </div>
   );

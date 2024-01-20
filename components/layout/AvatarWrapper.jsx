@@ -14,6 +14,7 @@ export const Profile = ({ avatar }) => {
         fill
         alt="profile"
         priority
+        loading="eager"
       />
     </div>
   );

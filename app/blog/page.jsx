@@ -10,7 +10,7 @@ import Article from "@/components/common/Article";
 import Link from "next/link";
 import { cn, formatDate } from "@/lib/utils";
 import { allBlogs } from "@/.contentlayer/generated";
-import { compareDesc } from "date-fns";
+import compareDesc from "date-fns/compareDesc";
 
 export const ArticleItem = ({ text, href, date, className }) => {
   return (
