@@ -1,6 +1,7 @@
 import { SocialLinks } from "@/lib/constant";
 import Link from "next/link";
 import React from "react";
+import SpotifyNowPlaying from "../essentials/SpotifyNowPlaying";
 
 const Footer = () => {
   return (
@@ -25,7 +26,10 @@ const Footer = () => {
           })}
         </div>
       </div>
-      <div className="animate-pulse">Song playing</div>
+      <div className="flex items-center justify-between">
+        <SpotifyNowPlaying />
+        {/* <p>©2024 all rights reserved</p> */}
+      </div>
     </footer>
   );
 };
