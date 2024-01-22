@@ -4,8 +4,8 @@
 
 html,
 body {
-  height: 100%;
   text-rendering: optimizeSpeed;
+  @apply h-full antialiased sm:subpixel-antialiased;
 }
 
 /* The base layer contains the base styles for elements like headings, paragraphs, and links. */
@@ -16,8 +16,7 @@ body {
     @apply dark:bg-[#16191d] dark:text-[#f1f3f5] text-[#030507] bg-[#f8f9fa] saturate-100;
   }
   a {
-    text-decoration-thickness: 4px;
-    text-underline-offset: 2px;
+    @apply decoration-4 underline-offset-2;
   }
 }
 
