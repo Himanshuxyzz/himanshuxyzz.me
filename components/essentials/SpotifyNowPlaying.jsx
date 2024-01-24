@@ -12,7 +12,7 @@ const SpotifyNowPlaying = () => {
 const SpotifyIcon = ({ className, props }) => (
   <svg
     viewBox="0 0 168 168"
-    className={cn("h-5 w-5 mt-1 mr-2", className)}
+    className={cn("h-5 w-5", className)}
     {...props}
   >
     <path
