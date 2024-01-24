@@ -45,11 +45,11 @@ const Footer = () => {
             <p className="text-xs">{data?.artist}</p>
           </Link>
         ) : (
-          (isLoading && <p className="animate-pulse">Loading...</p>) ||
-          (error && <p className="animate-pulse">Error...</p>) ||
+          (isLoading && (<p className="animate-pulse">Loading...</p>)) ||
+          (error && (<p className="animate-pulse">Error...</p>)) ||
           !data.isPlaying ||
           (data.trackType !== "track" && (
-            <p className="font-semibold">Offline</p>
+            (<p className="font-semibold">Offline</p>)
           ))
         )}
       </div>
