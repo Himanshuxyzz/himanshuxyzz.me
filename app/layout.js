@@ -6,8 +6,6 @@ import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import Main from "../components/common/Main";
 import Footer from "@/components/common/Footer";
 import { Suspense } from "react";
-import Loading from "./loading";
-import Skeleton from "@/components/common/Skeleton";
 
 const outfit = Outfit({
   subsets: ["latin"],
