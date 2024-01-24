@@ -8,7 +8,7 @@ import { fetcher } from "@/lib/utils";
 
 const Footer = () => {
   const { data, error, isLoading } = useSWR("/api/spotify", fetcher, {
-    refreshInterval: 50000,
+    refreshInterval: 30000,
   });
   return (
     <footer className="w-content max-w-full mx-auto py-4 flex flex-col items-center gap-y-2">
