@@ -10,15 +10,13 @@ export async function GET() {
 
   const result = await response.json();
 
-  
-
   const data = {
     isPlaying: result?.is_playing,
     title: result?.item?.name,
     songUrl: result?.item?.external_urls?.spotify,
     albumImg: result?.item?.album?.images[0]?.url,
     artist: result?.item?.artists?.map((artist) => artist?.name).join(","),
-    trackType:result?.currently_playing_type
+    trackType: result?.currently_playing_type,
   };
 
   return NextResponse.json(data);
