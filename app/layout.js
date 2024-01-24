@@ -18,7 +18,6 @@ export const metadata = {
   description: "portfolio",
 };
 
-export const revalidate = 30
 
 export default function RootLayout({ children }) {
   return (
