@@ -49,10 +49,7 @@ const page = () => {
     <Article>
       <UserProfile />
       <ContentContainer>
-        <AuthorInfo
-          author={"Himanshu"}
-          date={formatDate(new Date().toISOString())}
-        />
+        <AuthorInfo author={"Himanshu"} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <ArticleList title={"Blog"}>
           {posts.map((post, idx) => {

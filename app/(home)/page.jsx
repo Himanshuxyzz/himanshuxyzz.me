@@ -40,8 +40,12 @@ export const AuthorInfo = ({ author, date }) => {
       >
         {author}
       </Link>
-      <span>.</span>
-      <p className="font-bold">{date || Date.now()}</p>
+      {date && (
+        <>
+          <span>.</span>
+          <p className="font-bold">{date || Date.now()}</p>
+        </>
+      )}
     </div>
   );
 };

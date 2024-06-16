@@ -35,7 +35,7 @@ export const ResumeBtn = () => {
 
 const Name = ({ children }) => {
   return (
-    <h1 className="text-sm sm:text-fluid--3 flex gap-x-2 items-center font-bold saturate-200 leading-none">
+    <h1 className="text-base sm:text-fluid--3 flex gap-x-2 items-center font-bold saturate-200 leading-none">
       {children}
       <span className="relative ml-1 aspect-square inline-block">
         <Image width={34} height={36} src={bear} alt="bear" />
