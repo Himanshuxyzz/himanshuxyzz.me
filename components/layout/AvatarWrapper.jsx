@@ -8,14 +8,16 @@ import { bioDetailsIcon } from "@/lib/constant";
 export const Profile = ({ avatar }) => {
   return (
     <div className="absolute top-0 left-0 -translate-y-1/2 w-avatar h-avatar overflow-hidden">
-      <Image
-        className="object-cover aspect-square rounded-full border-4 border-[#030507] dark:border-[#f1f3f5] w-full h-full saturate-150"
-        src={avatar}
-        fill
-        alt="profile"
-        priority
-        loading="eager"
-      />
+      <picture>
+        <source srcSet={avatar} type="image/webp" />
+        <Image
+          className="object-cover aspect-square rounded-full border-4 border-[#030507] dark:border-[#f1f3f5] w-full h-full saturate-150"
+          src={avatar}
+          fill
+          alt="profile"
+          loading="lazy"
+        />
+      </picture>
     </div>
   );
 };
@@ -68,17 +70,14 @@ const BioDetails = () => {
       {Object.keys(bioDetailsIcon).map((key) => {
         const detail = bioDetailsIcon[key];
         return (
-          <>
-            <span
-              key={key}
-              className="p-1 bio-detail flex justify-center items-center  gap-x-1"
-            >
+          <React.Fragment key={key}>
+            <span className="p-1 bio-detail flex justify-center items-center  gap-x-1">
               <detail.icon />
               <span className="whitespace-nowrap">
                 <detail.text />
               </span>
             </span>
-          </>
+          </React.Fragment>
         );
       })}
     </div>

@@ -16,7 +16,6 @@ export const metadata = {
   description: "portfolio",
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -32,9 +31,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <SmoothScroll>
               <Main>
-                <Suspense fallback={<p className="text-center">Loading....</p>}>
-                  {children}
-                  </Suspense>
+                {children}
                 <Footer />
               </Main>
             </SmoothScroll>

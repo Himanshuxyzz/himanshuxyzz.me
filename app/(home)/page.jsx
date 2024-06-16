@@ -32,10 +32,10 @@ export const Title = ({ className, children }) => {
 
 export const AuthorInfo = ({ author, date }) => {
   return (
-    <div className="flex gap-x-2 text-fluid--1 items-center dark:text-[#868e96] text-[#495057]">
+    <div className="flex gap-x-2 text-fluid--1 items-center dark:text-[#868e96] text-[#495057] mb-2">
       <Link
-        href="/"
-        className="hover:underline font-bold text-[#030507] dark:text-[#f1f3f5] mb-1"
+        href="#"
+        className="hover:underline font-bold text-[#030507] dark:text-[#f1f3f5]"
         scroll={false}
       >
         {author}
