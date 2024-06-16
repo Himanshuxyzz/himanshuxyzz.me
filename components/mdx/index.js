@@ -1,6 +1,22 @@
 import Image from "next/image";
-const MdxComponent = {
-  img: Image,
+import FeatureImg from "../common/FeatureImg";
+
+const customImage = ({ ...props }) => {
+  return <Image {...props} />;
 };
 
-export default MdxComponent
+const NameHighlight = ({ children }) => {
+  return (
+    <span className=" font-bold text-link-bg decoration-4 underline-offset-2">
+      {children}
+    </span>
+  );
+};
+
+const MdxComponent = {
+  img: customImage,
+  NameHighlight,
+  FeatureImg,
+};
+
+export default MdxComponent;

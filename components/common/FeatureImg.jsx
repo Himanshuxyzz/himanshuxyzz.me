@@ -9,6 +9,7 @@ const FeatureImg = ({ image, ...props }) => {
           className="w-full rounded-lg"
           src={image}
           alt="feature image"
+          loading="lazy"
           {...props}
         />
       </picture>
