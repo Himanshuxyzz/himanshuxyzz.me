@@ -84,15 +84,15 @@ const BioDetails = () => {
   );
 };
 
-const AvatarWrapper = () => {
+const AvatarWrapper = ({ name, bio }) => {
   return (
     <div className="space-y-3">
       <div className=" flex items-center justify-end relative py-3 min-h-half-avatar">
         <Profile avatar={avatar} />
         <ResumeBtn />
       </div>
-      <Name>Himanshu Toppo</Name>
-      <Bio>I bring ideas to life with code! ✨</Bio>
+      <Name>{name}</Name>
+      <Bio>{bio}</Bio>
       <Hobby />
       <BioDetails />
     </div>

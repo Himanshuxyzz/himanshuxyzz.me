@@ -9,7 +9,10 @@ const Header = () => {
       <header>
         <Banner />
         <ContentWrapper className={"w-content px-4"}>
-          <AvatarWrapper />
+          <AvatarWrapper
+            name={"Himanshu Toppo"}
+            bio={"I bring ideas to life with code! ✨"}
+          />
         </ContentWrapper>
       </header>
     </ContentWrapper>
