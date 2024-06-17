@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
-
   return (
     <footer className="w-content max-w-full mx-auto py-4 flex flex-col items-center gap-y-2">
       <div className="text-fluid--2 grid place-items-center gap-y-2 w-full">

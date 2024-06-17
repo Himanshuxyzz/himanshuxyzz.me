@@ -1,10 +1,11 @@
 import Image from "next/image";
 import avatar from "@/public/avatar.webp";
-import feature from "@/public/feature-img.webp";
 import Article from "@/components/common/Article";
-import FeatureImg from "@/components/common/FeatureImg";
 import { cn, formatDate } from "@/lib/utils";
 import Link from "next/link";
+import { allPosts } from "@/.contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
+import MdxComponent from "@/components/mdx";
 
 export const UserProfile = () => {
   return (
@@ -14,6 +15,7 @@ export const UserProfile = () => {
           className="rounded-full w-10 h-10 object-cover"
           src={avatar}
           alt="user-profile"
+          placeholder="blur"
         />
       </div>
     </>
@@ -71,28 +73,37 @@ export const Content = ({ children, className }) => {
 
 const About = () => {
   return (
-    <Article className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}>
-      <UserProfile />
-      <ContentContainer>
-        <AuthorInfo
-          author={"Himanshu"}
-          date={formatDate(new Date().toISOString())}
-        />
-        <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
-        <Title>Hello World 👋</Title>
-        <Content>
-          I am{" "}
-          <span className=" font-bold text-link-bg decoration-4 underline-offset-2">
-            Himanshu Toppo
-          </span>
-          , based in india 🇮🇳 , i am a developer who loves to bring ideas to
-          life using modern web technologies, i enjoy learning new tools and
-          technologies , and currently into learning backend and databases while
-          also solidifying my knowledge of front-end development.
-        </Content>
-        <FeatureImg image={feature} />
-      </ContentContainer>
-    </Article>
+    <>
+      {allPosts.map((post) => {
+        console.log(post);
+        const MdxContent = useMDXComponent(post.body.code);
+
+        return (
+          <Article
+            className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}
+            key={post.url}
+          >
+            <UserProfile />
+            <ContentContainer>
+              <AuthorInfo
+                author={"Himanshu"}
+                // date={formatDate(new Date().toISOString())}
+                date={formatDate(post.date)}
+              />
+              <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
+              <Title>{post.title}</Title>
+              <Content
+                className={
+                  "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
+                }
+              >
+                <MdxContent components={MdxComponent} />
+              </Content>
+            </ContentContainer>
+          </Article>
+        );
+      })}
+    </>
   );
 };
 

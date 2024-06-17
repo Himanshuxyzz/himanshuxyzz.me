@@ -11,11 +11,12 @@ export const Profile = ({ avatar }) => {
       <picture>
         <source srcSet={avatar} type="image/webp" />
         <Image
-          className="object-cover aspect-square rounded-full border-4 border-[#030507] dark:border-[#f1f3f5] w-full h-full saturate-150"
+          className="object-cover aspect-square rounded-full border-4 border-[#030507] dark:border-[#f1f3f5] w-full h-full saturate-150 "
           src={avatar}
           fill
           alt="profile"
           loading="lazy"
+          placeholder="blur"
         />
       </picture>
     </div>
@@ -55,11 +56,11 @@ const Bio = ({ children }) => {
 const Hobby = () => {
   return (
     <div className="mb-3 dark:bg-[#212529] bg-[#f1f3f5] py-4 rounded-lg text-center flex flex-wrap gap-x-2 justify-center font-extrabold">
-      <span className="text-[#D68A94]">#Coding.</span>{" "}
-      <span className="text-[#faa780]">#Anime.</span>{" "}
-      <span className="text-[#C1C2FB] ">#Food.</span>{" "}
-      <span className="text-[#F6C67E]">#Gaming.</span>{" "}
-      <span className="text-[#F26F5D]">#Music</span>{" "}
+      <span className="text-[#D68A94]">#Coding.</span>
+      <span className="text-[#faa780]">#Anime.</span>
+      <span className="text-[#C1C2FB] ">#Food.</span>
+      <span className="text-[#F6C67E]">#Gaming.</span>
+      <span className="text-[#F26F5D]">#Music</span>
     </div>
   );
 };

@@ -4,7 +4,15 @@ import { ReactLenis } from "lenis/react";
 
 export const SmoothScroll = ({ children }) => {
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothTouch: true }}>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.075,
+        duration: 1.2,
+        smoothTouch: true,
+        requestAnimationFrame: true,
+      }}
+    >
       {children}
     </ReactLenis>
   );

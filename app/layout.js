@@ -31,7 +31,6 @@ export default function RootLayout({ children }) {
             <SmoothScroll>
               <Main>
                 {children}
-                <Footer />
               </Main>
             </SmoothScroll>
           </main>
