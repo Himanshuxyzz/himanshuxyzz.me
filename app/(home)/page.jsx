@@ -71,38 +71,40 @@ export const Content = ({ children, className }) => {
   return <div className={cn("mb-4", className)}>{children}</div>;
 };
 
+const Post = ({ post }) => {
+  const MdxContent = useMDXComponent(post?.body?.code);
+
+  return (
+    <Article
+      className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}
+      key={post.url}
+    >
+      <UserProfile />
+      <ContentContainer>
+        <AuthorInfo
+          author={"Himanshu"}
+          date={formatDate(post.date)}
+        />
+        <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
+        <Title>{post.title}</Title>
+        <Content
+          className={
+            "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
+          }
+        >
+          <MdxContent components={MdxComponent} />
+        </Content>
+      </ContentContainer>
+    </Article>
+  );
+};
+
 const About = () => {
   return (
     <>
-      {allPosts.map((post) => {
-        console.log(post);
-        const MdxContent = useMDXComponent(post.body.code);
-
-        return (
-          <Article
-            className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}
-            key={post.url}
-          >
-            <UserProfile />
-            <ContentContainer>
-              <AuthorInfo
-                author={"Himanshu"}
-                // date={formatDate(new Date().toISOString())}
-                date={formatDate(post.date)}
-              />
-              <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
-              <Title>{post.title}</Title>
-              <Content
-                className={
-                  "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
-                }
-              >
-                <MdxContent components={MdxComponent} />
-              </Content>
-            </ContentContainer>
-          </Article>
-        );
-      })}
+      {allPosts.map((post) => (
+        <Post key={post.url} post={post} />
+      ))}
     </>
   );
 };
