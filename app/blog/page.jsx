@@ -50,7 +50,7 @@ const page = () => {
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} />
-        <Mood MoodEmoji={"🤯"} MoodText={"Mind Blowing"} />
+        <Mood MoodEmoji={"⚡️"} MoodText={"Feelin' electric"} />
         <ArticleList title={"Blog"}>
           {posts.map((post, idx) => {
             return (

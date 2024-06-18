@@ -55,7 +55,7 @@ export const AuthorInfo = ({ author, date }) => {
 export const Mood = ({ MoodEmoji, MoodText }) => {
   return (
     <div className="mb-2">
-      <div className="py-1 px-3 inline-flex items-center gap-1 bg-[#dee2e6] dark:bg-[#495057] rounded-full">
+      <div className="py-1.5 px-3 inline-flex items-center gap-1 bg-[#dee2e6] dark:bg-[#495057] rounded-full">
         <span>{MoodEmoji}</span>
         <span className="text-fluid--2 font-bold">{MoodText}</span>
       </div>
@@ -81,10 +81,7 @@ const Post = ({ post }) => {
     >
       <UserProfile />
       <ContentContainer>
-        <AuthorInfo
-          author={"Himanshu"}
-          date={formatDate(post.date)}
-        />
+        <AuthorInfo author={"Himanshu"} date={formatDate(post.date)} />
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
         <Title>{post.title}</Title>
         <Content

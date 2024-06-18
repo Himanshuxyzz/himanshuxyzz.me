@@ -26,8 +26,8 @@ export const Profile = ({ avatar }) => {
 export const ResumeBtn = () => {
   return (
     <Link
-      className="hover:no-underline border-transparent dark:focus:border-[#f1f3f5] focus:border-[#030507] dark:focus-visible:border-[#f1f3f5] focus-visible:border-[#030507] hover:border-[#030507] dark:hover:border-[#f1f3f5] border-4 rounded-full text-fluid--1 flex gap-x-[2px] items-center text-white bg-link-bg px-3 leading-none font-bold text-center"
-      href={"#"}
+      className="hover:no-underline border-transparent dark:focus:border-[#f1f3f5] focus:border-[#030507] dark:focus-visible:border-[#f1f3f5] focus-visible:border-[#030507] hover:border-[#030507] dark:hover:border-[#f1f3f5] border-4 rounded-full text-fluid--1 text-white bg-link-bg px-3 py-[3px] leading-none font-bold text-center"
+      href={"/resume"}
     >
       Resume
     </Link>
