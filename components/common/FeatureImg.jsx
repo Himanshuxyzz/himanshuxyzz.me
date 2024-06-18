@@ -12,7 +12,7 @@ const FeatureImg = ({ image, ...props }) => {
           alt="feature image"
           loading="lazy"
           {...props}
-          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+          onLoad={(e) => e.target.classList.remove("opacity-0")}
         />
       </picture>
     </>
