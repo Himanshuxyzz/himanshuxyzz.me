@@ -22,7 +22,7 @@ const page = () => {
         <Mood MoodEmoji={"🤓"} MoodText={"Feelin' nerdy"} />
         <Title className={"text-center"}>Resume</Title>
         <Content>
-          <ResumeContainer className={"w-[450px] mx-auto"} />
+          <ResumeContainer className={"w-full mx-auto"} />
         </Content>
       </ContentContainer>
     </Article>
