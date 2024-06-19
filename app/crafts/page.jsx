@@ -21,7 +21,9 @@ const page = () => {
           className={
             "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
           }
-        ></Content>
+        >
+          <div className="text-center text-white">⚠️ Under Construction</div>
+        </Content>
       </ContentContainer>
     </Article>
   );

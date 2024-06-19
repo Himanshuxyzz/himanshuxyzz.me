@@ -49,7 +49,7 @@ const ResumeContainer = ({ className }) => {
           className="px-3 py-1.5 bg-zinc-800 text-zinc-50 border-2 border-transparent truncate rounded hover:brightness-150 active:brightness-125 disabled:cursor-default disabled:bg-zinc-200 disabled:text-zinc-900"
           onClick={() =>
             window.open(
-              "https://drive.google.com/file/d/1QgItis-Gu5Z2k42kUfJIqLCVDHPs5srK/view?usp=sharing"
+              "https://drive.google.com/file/d/1Nz8PnhkzuPt0Whpop1HjHNYAjOlhCPwk/view?usp=sharing"
             )
           }
         >
