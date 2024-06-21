@@ -1,5 +1,5 @@
 "use client";
-import Article from "@/components/common/Article";
+import TweetArticle from "@/components/common/TweetArticle";
 import React from "react";
 import {
   AuthorInfo,
@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 
 const page = () => {
   return (
-    <Article>
+    <TweetArticle>
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} />
@@ -25,7 +25,7 @@ const page = () => {
           <ResumeContainer className={"w-full mx-auto"} />
         </Content>
       </ContentContainer>
-    </Article>
+    </TweetArticle>
   );
 };
 

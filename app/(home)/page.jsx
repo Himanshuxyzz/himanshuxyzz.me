@@ -1,6 +1,6 @@
 import Image from "next/image";
 import avatar from "@/public/avatar.webp";
-import Article from "@/components/common/Article";
+import TweetArticle from "@/components/common/TweetArticle";
 import { cn, formatDate } from "@/lib/utils";
 import Link from "next/link";
 import { allPosts } from "@/.contentlayer/generated";
@@ -75,7 +75,7 @@ const Post = ({ post }) => {
   const MdxContent = useMDXComponent(post?.body?.code);
 
   return (
-    <Article
+    <TweetArticle
       className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}
       key={post.url}
     >
@@ -92,7 +92,7 @@ const Post = ({ post }) => {
           <MdxContent components={MdxComponent} />
         </Content>
       </ContentContainer>
-    </Article>
+    </TweetArticle>
   );
 };
 

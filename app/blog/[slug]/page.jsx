@@ -2,7 +2,7 @@ import React from "react";
 import { allBlogs } from "@/.contentlayer/generated";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import Article from "@/components/common/Article";
+import TweetArticle from "@/components/common/TweetArticle";
 import {
   AuthorInfo,
   ContentContainer,
@@ -22,7 +22,7 @@ const Blog = ({ params }) => {
   const MdxContent = useMDXComponent(blog.body.code);
 
   return (
-    <Article>
+    <TweetArticle>
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} date={formatDate(blog.date)} />
@@ -36,7 +36,7 @@ const Blog = ({ params }) => {
           <MdxContent components={MdxComponent} />
         </Content>
       </ContentContainer>
-    </Article>
+    </TweetArticle>
   );
 };
 

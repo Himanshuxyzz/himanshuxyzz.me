@@ -6,11 +6,11 @@ import {
   Title,
   UserProfile,
 } from "@/app/(home)/page";
-import Article from "@/components/common/Article";
 import Link from "next/link";
 import { cn, formatDate } from "@/lib/utils";
 import { allBlogs } from "@/.contentlayer/generated";
 import compareDesc from "date-fns/compareDesc";
+import TweetArticle from "@/components/common/TweetArticle";
 
 export const ArticleItem = ({ text, href, date, className }) => {
   return (
@@ -46,7 +46,7 @@ const page = () => {
   );
   // console.log(posts);
   return (
-    <Article>
+    <TweetArticle>
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} />
@@ -64,7 +64,7 @@ const page = () => {
           })}
         </ArticleList>
       </ContentContainer>
-    </Article>
+    </TweetArticle>
   );
 };
 

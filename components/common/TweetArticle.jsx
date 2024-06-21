@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-const Article = ({ children, className }) => {
+const TweetArticle = ({ children, className }) => {
   return (
     <article
       className={cn(
@@ -14,4 +14,4 @@ const Article = ({ children, className }) => {
   );
 };
 
-export default Article;
+export default TweetArticle;
