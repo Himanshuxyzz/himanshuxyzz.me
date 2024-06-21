@@ -31,7 +31,7 @@ const page = () => {
 const WorkTimeline = () => {
   return (
     <div className="w-full border dark:border-neutral-700 border-black  border-dashed p-3.5 sm:p-5 rounded-md">
-      <div className="w-full border-b dark:border-neutral-700 border-black  border-dashed pb-2.5 flex items-center justify-between">
+      <div className="w-full border-b dark:border-neutral-700 border-black  border-dashed pb-2.5 flex items-center justify-between flex-wrap">
         <p className="font-semibold">Web developer intern</p>
         <div>
           <Link href={"https://hackshade.in/"}>
