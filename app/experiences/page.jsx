@@ -8,6 +8,8 @@ import {
   UserProfile,
 } from "../(home)/page";
 import TweetArticle from "@/components/common/TweetArticle";
+import { MdOutlineArrowOutward } from "react-icons/md";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -32,7 +34,12 @@ const WorkTimeline = () => {
       <div className="w-full border-b dark:border-neutral-700 border-black  border-dashed pb-2.5 flex items-center justify-between">
         <p className="font-semibold">Web developer intern</p>
         <div>
-          <p className="font-semibold text-start sm:text-end">Hackshade</p>
+          <Link href={"https://hackshade.in/"}>
+            <p className="font-semibold text-start sm:text-end cursor-pointer flex items-center gap-0.5 hover:gap-1">
+              Hackshade <MdOutlineArrowOutward width={20} height={20} />
+            </p>
+          </Link>
+
           <p className="text-neutral-400 font-semibold text-xs sm:text-sm sm:text-end">
             jan 2023 - jun 2023
           </p>
