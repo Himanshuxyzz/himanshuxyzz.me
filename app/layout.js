@@ -4,7 +4,8 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import Navbar from "@/components/common/Navbar";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import Main from "../components/common/Main";
-import Footer from "@/components/common/Footer";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import TopProgress from "@/components/providers/top-progress";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,14 +27,14 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
           storageKey="theme"
         >
-          <main>
-            <Navbar />
-            <SmoothScroll>
-              <Main>
-                {children}
-              </Main>
-            </SmoothScroll>
-          </main>
+          <TopProgress>
+            <main>
+              <Navbar />
+              <SmoothScroll>
+                <Main>{children}</Main>
+              </SmoothScroll>
+            </main>
+          </TopProgress>
         </ThemeProvider>
       </body>
     </html>
