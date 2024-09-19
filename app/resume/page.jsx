@@ -22,7 +22,10 @@ const page = () => {
         <Mood MoodEmoji={"🤓"} MoodText={"Feelin' nerdy"} />
         <Title className={"text-center"}>Resume</Title>
         <Content>
-          <ResumeContainer className={"w-full mx-auto"} />
+          {/* <ResumeContainer className={"w-full mx-auto"} /> */}
+          <div className="text-center dark:text-white text-black font-bold">
+            ⚠️ Under Construction
+          </div>
         </Content>
       </ContentContainer>
     </TweetArticle>
