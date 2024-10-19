@@ -7,10 +7,20 @@ import { allPosts } from "@/.contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import MdxComponent from "@/components/mdx";
 
+const About = () => {
+  return (
+    <>
+      {allPosts.map((post) => (
+        <Post key={post.url} post={post} />
+      ))}
+    </>
+  );
+};
+
 export const UserProfile = () => {
   return (
     <>
-      <div className="w-10 h-10">
+      <div className="w-10 h-10 cursor-pointer">
         <Image
           className="rounded-full w-10 h-10 object-cover"
           src={avatar}
@@ -95,15 +105,4 @@ const Post = ({ post }) => {
     </TweetArticle>
   );
 };
-
-const About = () => {
-  return (
-    <>
-      {allPosts.map((post) => (
-        <Post key={post.url} post={post} />
-      ))}
-    </>
-  );
-};
-
 export default About;
