@@ -2,9 +2,7 @@ import { Outfit } from "next/font/google";
 import "@/styles/css/globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import Navbar from "@/components/common/Navbar";
-import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import Main from "../components/common/Main";
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import TopProgress from "@/components/providers/top-progress";
 
 const outfit = Outfit({
@@ -30,9 +28,7 @@ export default function RootLayout({ children }) {
           <TopProgress>
             <main>
               <Navbar />
-              <SmoothScroll>
-                <Main>{children}</Main>
-              </SmoothScroll>
+              <Main>{children}</Main>
             </main>
           </TopProgress>
         </ThemeProvider>
