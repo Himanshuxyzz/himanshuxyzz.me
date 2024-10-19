@@ -6,7 +6,7 @@ import banner from "@/public/banner-test.webp";
 
 const Banner = () => {
   return (
-    <div className="relative w-full aspect-[3/1] rounded-lg overflow-hidden">
+    <div className="relative w-full aspect-[3/1] ">
       <picture className="relative">
         <Image
           className="saturate-200 transition-opacity opacity-0 duration-[2s]"

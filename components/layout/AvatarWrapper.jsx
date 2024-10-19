@@ -26,7 +26,7 @@ export const Profile = ({ avatar }) => {
 export const ResumeBtn = () => {
   return (
     <Link
-      className="hover:no-underline border-transparent dark:focus:border-[#f1f3f5] focus:border-[#030507] dark:focus-visible:border-[#f1f3f5] focus-visible:border-[#030507] hover:border-[#030507] dark:hover:border-[#f1f3f5] border-2 rounded-full text-fluid--1 text-white bg-link-bg px-3 py-[3px] leading-none font-bold text-center"
+      className="hover:no-underline border-transparent dark:focus:border-[#f1f3f5] focus:border-[#030507] dark:focus-visible:border-[#f1f3f5] focus-visible:border-[#030507] hover:border-[#030507] dark:hover:border-[#f1f3f5] border-4 rounded-full text-fluid--1 text-white bg-link-bg px-3 py-[3px] leading-none font-bold text-center"
       href={"/resume"}
     >
       Resume
@@ -82,7 +82,7 @@ const BioDetails = () => {
         const detail = bioDetailsIcon[key];
         return (
           <React.Fragment key={key}>
-            <span className="p-1 bio-detail flex justify-center items-center  gap-x-1 cursor-pointer">
+            <span className="p-1 bio-detail flex justify-center items-center  gap-x-1">
               <detail.icon />
               <span className="whitespace-nowrap">
                 <detail.text />
