@@ -19,16 +19,10 @@ const page = () => {
         <AuthorInfo author={"Himanshu"} />
         <Mood MoodEmoji={"🚀"} MoodText={"Feelin' fired up"} />
         <Title>Experiences</Title>
-        <Content
-          className={
-            "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
-          }
-        >
-          <div className="text-center dark:text-white text-black font-bold">
-            ⚠️ Under Construction
-          </div>
-        </Content>
-        {/* <WorkTimeline /> */}
+        {/* <div className="text-center dark:text-white text-black font-bold">
+          ⚠️ Under Construction
+        </div> */}
+        <WorkTimeline />
       </ContentContainer>
     </TweetArticle>
   );
