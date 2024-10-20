@@ -8,7 +8,7 @@ const TopProgress = ({ children }) => {
       <ProgressBar
         height="4px"
         color="#de1d8d"
-        options={{ showSpinner: false }}
+        options={{ showSpinner: true }}
         shallowRouting
       />
     </>

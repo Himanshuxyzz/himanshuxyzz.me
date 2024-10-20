@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import TweetArticle from "@/components/common/TweetArticle";
 import MdxComponent from "@/components/mdx/index";
+import { Posts } from "@/.contentlayer/generated";
 
-export const Post = ({ post }) => {
+export const Post = ({ post }: { post: Posts }) => {
   const MdxContent = useMDXComponent(post?.body?.code);
 
   return (
@@ -31,15 +32,31 @@ export const Post = ({ post }) => {
   );
 };
 
-export const ContentContainer = ({ children }) => {
+type ContentContainerProps = {
+  children: React.ReactNode;
+};
+
+export const ContentContainer: React.FC<ContentContainerProps> = ({
+  children,
+}) => {
   return <div className="flex flex-col gap-y-1 leading-tight">{children}</div>;
 };
 
-export const Content = ({ children, className }) => {
+type ContentProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+export const Content: React.FC<ContentProps> = ({ children, className }) => {
   return <div className={cn("mb-4", className)}>{children}</div>;
 };
 
-export const Mood = ({ MoodEmoji, MoodText }) => {
+type MoodProps = {
+  MoodEmoji: string;
+  MoodText: string;
+};
+
+export const Mood: React.FC<MoodProps> = ({ MoodEmoji, MoodText }) => {
   return (
     <div className="mb-2">
       <div className="py-1.5 px-3 inline-flex items-center gap-1 bg-[#dee2e6] dark:bg-[#495057] rounded-full">
@@ -50,7 +67,12 @@ export const Mood = ({ MoodEmoji, MoodText }) => {
   );
 };
 
-export const AuthorInfo = ({ author, date }) => {
+type AuthorInfoProps = {
+  author: string;
+  date: string;
+};
+
+export const AuthorInfo: React.FC<AuthorInfoProps> = ({ author, date }) => {
   return (
     <div className="flex gap-x-2 text-fluid--1 items-center dark:text-[#868e96] text-[#495057] mb-2">
       <Link
@@ -70,7 +92,12 @@ export const AuthorInfo = ({ author, date }) => {
   );
 };
 
-export const Title = ({ className, children }) => {
+type TitleProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+export const Title: React.FC<TitleProps> = ({ className, children }) => {
   return (
     <>
       <h1 className={cn("mb-2 font-bold text-heading-fluid-1", className)}>
@@ -80,7 +107,7 @@ export const Title = ({ className, children }) => {
   );
 };
 
-export const UserProfile = () => {
+export const UserProfile: React.FC = () => {
   return (
     <>
       <div className="w-10 h-10">
