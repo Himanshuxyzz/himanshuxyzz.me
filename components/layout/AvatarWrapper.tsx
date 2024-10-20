@@ -14,7 +14,7 @@ export const Profile: React.FC<ProfileProps> = ({ avatar }) => {
     <div className="absolute top-0 left-0 -translate-y-1/2 w-avatar h-avatar overflow-hidden">
       <picture>
         <Image
-          className="object-cover aspect-square rounded-full border-[3px] border-[#030507] dark:border-[#f1f3f5] w-full h-full saturate-150"
+          className="object-cover aspect-square rounded-full border-[3px] border-[#030507] dark:border-[#f1f3f5] w-full h-full"
           src={avatar}
           fill
           alt="profile"

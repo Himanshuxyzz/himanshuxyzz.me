@@ -1,33 +1,26 @@
-// tsconfig.json
 {
   "compilerOptions": {
-    // Base configuration
-    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    // Path aliases (preserving your current setup)
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
-    },
-    // Essential TypeScript options
-    "strict": true,
+    "allowJs": true,
     "skipLibCheck": true,
+    "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    // Next.js specific
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "allowJs": true
+    "paths": {
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -35,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-  ],
+, "components/mdx/index.js"  ],
   "exclude": ["node_modules"]
 }
