@@ -1,8 +1,12 @@
 "use client";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import React from "react";
 
-const FeatureImg = ({ image, ...props }) => {
+type FeatureImgProps = {
+  image: string;
+} & Omit<ImageProps, "src" | "alt">;
+
+const FeatureImg: React.FC<FeatureImgProps> = ({ image, ...props }) => {
   return (
     <>
       <picture className="mb-2">
@@ -12,7 +16,9 @@ const FeatureImg = ({ image, ...props }) => {
           alt="feature image"
           loading="lazy"
           {...props}
-          onLoad={(e) => e.target.classList.remove("opacity-0")}
+          onLoad={(e) =>
+            (e.target as HTMLImageElement).classList.remove("opacity-0")
+          }
         />
       </picture>
     </>

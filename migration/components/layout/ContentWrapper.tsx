@@ -1,7 +1,15 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-const ContentWrapper = ({ className, children }) => {
+type ContentWrapperProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+const ContentWrapper: React.FC<ContentWrapperProps> = ({
+  className,
+  children,
+}) => {
   return <div className={cn("mx-auto max-w-full", className)}>{children}</div>;
 };
 

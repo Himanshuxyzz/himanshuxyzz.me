@@ -16,7 +16,7 @@ export const ThemeSwitch = () => {
     return null;
   }
 
-  const handleThemeChange = (selectedTheme) => {
+  const handleThemeChange = (selectedTheme: string) => {
     // it checks if theme is system then set theme to system else it is not system then it sets theme with the value which is passed in argument
     if (selectedTheme === "system") {
       setTheme("system");

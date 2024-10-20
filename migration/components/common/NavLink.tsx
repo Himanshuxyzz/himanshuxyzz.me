@@ -4,7 +4,13 @@ import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-const NavLink = ({ href, name, key }) => {
+type NavLinkProps = {
+  href: string;
+  name: string;
+  key: string | number;
+};
+
+const NavLink: React.FC<NavLinkProps> = ({ href, name, key }) => {
   const currentPath = usePathname();
   const isActive =
     currentPath.startsWith(href) &&

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="text-fluid--2 grid place-items-center gap-y-2 w-full">
         <div className="flex flex-wrap justify-center">
           {Object.keys(SocialLinks).map((key, idxs) => {
-            const detail = SocialLinks[key];
+            const detail = SocialLinks[key as keyof typeof SocialLinks];
             return (
               <React.Fragment key={idxs}>
                 <Link

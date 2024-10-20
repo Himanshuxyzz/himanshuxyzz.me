@@ -1,11 +1,15 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import avatar from "@/public/avatar.webp";
 import bear from "@/public/bear.svg";
 import { bioDetailsIcon } from "@/lib/constant";
 
-export const Profile = ({ avatar }) => {
+type ProfileProps = {
+  avatar: string | StaticImageData;
+};
+
+export const Profile: React.FC<ProfileProps> = ({ avatar }) => {
   return (
     <div className="absolute top-0 left-0 -translate-y-1/2 w-avatar h-avatar overflow-hidden">
       <picture>
@@ -33,7 +37,11 @@ export const ResumeBtn = () => {
   );
 };
 
-const Name = ({ children }) => {
+type NameProps = {
+  children: React.ReactNode;
+};
+
+const Name: React.FC<NameProps> = ({ children }) => {
   return (
     <h1 className="text-base sm:text-fluid--3 flex gap-x-2 items-center font-bold saturate-200 leading-none">
       {children}
@@ -44,7 +52,9 @@ const Name = ({ children }) => {
   );
 };
 
-const Bio = ({ children }) => {
+type BioProps = { children: React.ReactNode };
+
+const Bio: React.FC<BioProps> = ({ children }) => {
   return (
     <>
       <p className="mb-1">{children}</p>
@@ -78,7 +88,7 @@ const BioDetails = () => {
   return (
     <div className="flex gap-x-2 sm:gap-x-4 gap-y-1 items-center text-fluid--1 flex-wrap justify-center text-[#495057] dark:text-[#868E96] font-bold">
       {Object.keys(bioDetailsIcon).map((key) => {
-        const detail = bioDetailsIcon[key];
+        const detail = bioDetailsIcon[key as keyof typeof bioDetailsIcon];
         return (
           <React.Fragment key={key}>
             <span className="p-1 bio-detail flex justify-center items-center  gap-x-1">
@@ -94,7 +104,12 @@ const BioDetails = () => {
   );
 };
 
-const AvatarWrapper = ({ name, bio }) => {
+type AvatarWrapperProps = {
+  name: string;
+  bio: string;
+};
+
+const AvatarWrapper: React.FC<AvatarWrapperProps> = ({ name, bio }) => {
   return (
     <div className="space-y-3">
       <div className=" flex items-center justify-end relative py-3 min-h-half-avatar">

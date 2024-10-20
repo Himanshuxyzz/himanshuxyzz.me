@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 
 export default function Resume() {
   return (
-    <TweetArticle>
+    <TweetArticle className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}>
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} />

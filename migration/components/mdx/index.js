@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FeatureImg from "@/components/common/FeatureImg";
+import React from "react";
 
 const customImage = ({ ...props }) => {
   return <Image {...props} />;
@@ -7,7 +8,7 @@ const customImage = ({ ...props }) => {
 
 const NameHighlight = ({ children }) => {
   return (
-    <span className=" font-bold text-link-bg decoration-4 underline-offset-2">
+    <span className="font-bold text-link-bg decoration-4 underline-offset-2">
       {children}
     </span>
   );

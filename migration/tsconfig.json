@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-  ],
+, "components/mdx/index.js"  ],
   "exclude": ["node_modules"]
 }

@@ -25,7 +25,11 @@ const NavTab = () => {
   );
 };
 
-const ContentSection = ({ children }) => {
+type ContentSectionProps = {
+  children: React.ReactNode;
+};
+
+const ContentSection: React.FC<ContentSectionProps> = ({ children }) => {
   return (
     <ContentWrapper
       className={"w-content flex flex-col justify-center pt-4 gap-8 "}
