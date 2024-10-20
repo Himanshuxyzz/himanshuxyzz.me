@@ -3,9 +3,9 @@ import avatar from "@/public/avatar.webp";
 import { cn, formatDate } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import TweetArticle from "@/components/common/TweetArticle";
 import MdxComponent from "@/components/mdx/index";
 import { Posts } from "@/.contentlayer/generated";
+import { TweetArticle } from "./Article";
 
 export const Post = ({ post }: { post: Posts }) => {
   const MdxContent = useMDXComponent(post?.body?.code);
@@ -69,7 +69,7 @@ export const Mood: React.FC<MoodProps> = ({ MoodEmoji, MoodText }) => {
 
 type AuthorInfoProps = {
   author: string;
-  date: string;
+  date?: string;
 };
 
 export const AuthorInfo: React.FC<AuthorInfoProps> = ({ author, date }) => {
