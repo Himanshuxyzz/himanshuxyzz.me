@@ -33,14 +33,14 @@ module.exports = {
               color: "#F1F3F5",
             },
             h2: {
-              color:"#F1F3F5",
+              color: "#F1F3F5",
             },
             a: {
               color: "#de1d8d",
             },
             strong: {
-              color:"#F1F3F5",
-            }
+              color: "#F1F3F5",
+            },
           },
         },
         light: {
@@ -48,22 +48,22 @@ module.exports = {
             p: {
               color: "#030507",
             },
-             h2: {
-              color:"#030507",
+            h2: {
+              color: "#030507",
             },
-             a: {
+            a: {
               color: "#de1d8d",
             },
             strong: {
-              color:"#030507",
+              color: "#030507",
             },
           },
         },
       },
     },
   },
-   variants: {
-    extend: { typography: ["dark","light"] }
+  variants: {
+    extend: { typography: ["dark", "light"] },
   },
 
   plugins: [require("@tailwindcss/typography")],
