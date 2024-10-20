@@ -6,7 +6,7 @@ import banner from "@/public/banner-test.webp";
 
 const Banner: React.FC = () => {
   return (
-    <div className="relative w-full aspect-[3/1] ">
+    <div className="relative w-full aspect-[3/1] md:rounded-lg overflow-hidden shadow-sm dark:shadow-none">
       <picture className="relative">
         <Image
           className="saturate-200 transition-opacity opacity-0 duration-[2s]"
