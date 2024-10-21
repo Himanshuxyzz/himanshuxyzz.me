@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic"; // defaults to auto
+export const revalidate = 60;
+
 import axios from "axios";
 
 const {
@@ -46,7 +49,7 @@ const getAccessToken = async () => {
   return res.data.access_token;
 };
 
- const getNowPlaying = async () => {
+const getNowPlaying = async () => {
   const access_token = await getAccessToken();
 
   return axios.get<SpotifyData>(NOW_PLAYING_ENDPOINT, {
