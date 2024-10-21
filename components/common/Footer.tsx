@@ -36,7 +36,7 @@ const Footer = () => {
   const { isLoading, data: spotifyData } = useQuery<SpotifyData>({
     queryKey: ["now-playing"],
     queryFn: () => fetch("/api/spotify").then((res) => res.json()),
-    refetchInterval: 1000 * 60 * 2,
+    refetchInterval: 1000 * 60 * 1,
     refetchOnWindowFocus: true,
   });
 
