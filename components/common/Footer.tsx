@@ -8,7 +8,7 @@ import React from "react";
 const SpotifyNowPlaying = ({ spotifyData }: { spotifyData: SpotifyData }) => {
   if (!spotifyData || !spotifyData.isPlaying) {
     return (
-      <div className="flex items-center space-x-2 bg-gray-200 text-gray-600 p-2 rounded-md shadow-md">
+      <div className="flex items-center space-x-2 dark:bg-[#212529] bg-[#f1f3f5] p-3 rounded-md shadow-md">
         <span className="text-fluid--1 font-semibold">
           Currently not playing anything
         </span>
