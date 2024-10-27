@@ -7,6 +7,7 @@ export const Posts = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
+    isPinned: { type: "boolean", default: false },
   },
   computedFields: {
     url: {
