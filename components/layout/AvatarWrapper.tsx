@@ -18,8 +18,9 @@ export const Profile: React.FC<ProfileProps> = ({ avatar }) => {
           src={avatar}
           fill
           alt="profile"
-          loading="lazy"
+          loading="eager"
           placeholder="blur"
+          priority
         />
       </picture>
     </div>
