@@ -6,6 +6,7 @@ import TopProgress from "@/components/providers/top-progress";
 import Navbar from "@/components/common/Navbar";
 import Main from "../components/common/Main";
 import { TanstackProvider } from "@/components/providers/tan-stack-provider";
+import { BlurFade } from "@/components/layout/BlurFadeWrapper";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   title: "himanshuxyzz",
   description: "portfolio",
 };
+const BLUR_FADE_DELAY = 0.05;
 
 export default function RootLayout({
   children,
@@ -33,9 +35,11 @@ export default function RootLayout({
             storageKey="theme"
           >
             <TopProgress>
-              <main>
+              <main className="min-h-dvh">
                 <Navbar />
-                <Main>{children}</Main>
+                <Main>
+                  <BlurFade delay={BLUR_FADE_DELAY}>{children}</BlurFade>
+                </Main>
               </main>
             </TopProgress>
           </ThemeProvider>
