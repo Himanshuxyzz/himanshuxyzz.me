@@ -14,6 +14,7 @@ import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Link from "next/link";
 import Image from "next/image";
+import FeatureImg from "@/components/common/FeatureImg";
 
 export default function CraftDetail({ params }: { params: { slug: string } }) {
   const craft = allCrafts.find(
@@ -28,7 +29,10 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
     <TweetArticle>
       <UserProfile />
       <ContentContainer>
-        <AuthorInfo author={"Himanshu"} date={formatDate(craft.date)} />
+        <AuthorInfo
+          author={"Himanshu"}
+          date={craft.date ? formatDate(craft.date) : ""}
+        />
         <Mood MoodEmoji={"🎨"} MoodText={"Feelin' artsy"} />
         <Title className={"text-center"}>{craft.title}</Title>
 
@@ -47,12 +51,11 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
 
         {craft.thumbnail && (
           <div className="w-full my-4 flex justify-center">
-            <Image
-              src={craft.thumbnail}
-              alt={craft.title}
+            <FeatureImg
+              image={craft.thumbnail}
               width={600}
               height={400}
-              className="rounded-lg"
+              className="rounded-lg w-full"
               quality={100}
             />
           </div>

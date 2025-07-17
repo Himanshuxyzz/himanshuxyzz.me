@@ -16,9 +16,13 @@ import { compareDesc } from "date-fns";
 import { formatDate } from "@/lib/utils";
 
 export default function Crafts() {
-  const crafts = allCrafts.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date))
-  );
+  const crafts = allCrafts.sort((a, b) => {
+    if (a.date && b.date) {
+      return compareDesc(new Date(a.date), new Date(b.date));
+    } else {
+      return 0;
+    }
+  });
 
   return (
     <TweetArticle>
@@ -33,7 +37,7 @@ export default function Crafts() {
                 key={craft._id}
                 text={craft.title}
                 href={craft.url}
-                date={formatDate(craft.date)}
+                date={craft.date ? formatDate(craft.date) : ""}
                 className="rounded-md"
               />
             ))

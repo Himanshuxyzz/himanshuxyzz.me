@@ -39,7 +39,7 @@ export const Craft = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
-    date: { type: "date", required: true },
+    date: { type: "date", required: false },
     technologies: { type: "list", of: { type: "string" }, default: [] },
     link: { type: "string", required: false },
     appStoreLink: { type: "string", required: false },
