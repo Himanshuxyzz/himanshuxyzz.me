@@ -1,4 +1,9 @@
-import { TweetArticle } from "@/components/common/Article";
+import { allCrafts } from "@/.contentlayer/generated";
+import {
+  ArticleItem,
+  ArticleList,
+  TweetArticle,
+} from "@/components/common/Article";
 import {
   AuthorInfo,
   Content,
@@ -7,24 +12,42 @@ import {
   Title,
   UserProfile,
 } from "@/components/common/Post";
-import React from "react";
+import { compareDesc } from "date-fns";
+import { formatDate } from "@/lib/utils";
+
 export default function Crafts() {
+  const crafts = allCrafts.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date))
+  );
+
   return (
-    <TweetArticle className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}>
+    <TweetArticle>
       <UserProfile />
       <ContentContainer>
         <AuthorInfo author={"Himanshu"} />
         <Mood MoodEmoji={"🎨"} MoodText={"Feelin' artsy"} />
-        <Title>Crafts</Title>
-        <Content
-          className={
-            "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
-          }
-        >
-          <div className="text-center dark:text-white text-black font-bold">
-            ⚠️ Under Construction
-          </div>
-        </Content>
+        <ArticleList title={"Crafts"}>
+          {crafts.length > 0 ? (
+            crafts.map((craft) => (
+              <ArticleItem
+                key={craft._id}
+                text={craft.title}
+                href={craft.url}
+                date={formatDate(craft.date)}
+                className="rounded-md"
+              />
+            ))
+          ) : (
+            <div className="py-8 text-center">
+              <div className="text-xl font-bold mb-2">
+                🚧 Work in Progress 🚧
+              </div>
+              <p className="text-[#495057] dark:text-[#ced4da]">
+                Exciting crafts coming soon! Please check back later.
+              </p>
+            </div>
+          )}
+        </ArticleList>
       </ContentContainer>
     </TweetArticle>
   );

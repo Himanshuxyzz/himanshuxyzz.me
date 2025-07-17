@@ -33,9 +33,31 @@ export const Blog = defineDocumentType(() => ({
   },
 }));
 
+export const Craft = defineDocumentType(() => ({
+  name: "Craft",
+  filePathPattern: `crafts/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    date: { type: "date", required: true },
+    technologies: { type: "list", of: { type: "string" }, default: [] },
+    link: { type: "string", required: false },
+    appStoreLink: { type: "string", required: false },
+    playStoreLink: { type: "string", required: false },
+    thumbnail: { type: "string", required: false },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (craft) =>
+        `/crafts/${craft._raw.sourceFileName.replace(".mdx", "")}`,
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Posts, Blog],
+  documentTypes: [Posts, Blog, Craft],
   // documentTypes: [Blog],
   disableImportAliasWarning: true,
   mdx: {
