@@ -7,6 +7,7 @@ import Navbar from "@/components/common/Navbar";
 import Main from "../components/common/Main";
 import { TanstackProvider } from "@/components/providers/tan-stack-provider";
 import { BlurFade } from "@/components/layout/BlurFadeWrapper";
+import { Analytics } from "@vercel/analytics/react";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
             </TopProgress>
           </ThemeProvider>
         </TanstackProvider>
+        <Analytics />
       </body>
     </html>
   );
