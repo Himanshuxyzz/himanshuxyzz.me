@@ -55,7 +55,7 @@ const ResumeContainer: React.FC<ResumeProps> = ({ className }) => {
           className="px-3 py-1.5 bg-zinc-800 text-zinc-50 border-2 border-transparent truncate rounded hover:brightness-150 active:brightness-125 disabled:cursor-default disabled:bg-zinc-200 disabled:text-zinc-900"
           onClick={() =>
             window.open(
-              "https://drive.google.com/file/d/1_aH9HiMx6tUtj2gY460sLia-AHjfV2eh/view?usp=sharing"
+              "https://drive.google.com/file/d/1cmTYsPmPWAjtQz5eOKh2IH93VLSuqx41/view?usp=sharing"
             )
           }
         >

@@ -18,16 +18,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "contentlayer/generated": ["./.contentlayer/generated"],
+      "@/*": ["./*"]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".contentlayer/generated"
-, "components/mdx/index.js"  ],
+    "components/mdx/index.js",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

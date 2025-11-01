@@ -1,16 +1,15 @@
-import { useMDXComponent } from "next-contentlayer/hooks";
 import avatar from "@/public/avatar.webp";
 import { cn, formatDate } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import MdxComponent from "@/components/mdx/index";
-import { Posts } from "@/.contentlayer/generated";
 import { TweetArticle } from "./Article";
 import { GiPin } from "react-icons/gi";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { HomepagePost } from "@/lib/mdx";
 
-export const Post = ({ post }: { post: Posts }) => {
-  const MdxContent = useMDXComponent(post?.body?.code);
-
+export const Post = ({ post }: { post: HomepagePost }) => {
+  const { frontmatter } = post;
   return (
     <TweetArticle
       className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}
@@ -19,24 +18,24 @@ export const Post = ({ post }: { post: Posts }) => {
       <UserProfile />
       <ContentContainer>
         <div className="flex justify-between items-center">
-          <AuthorInfo author={"Himanshu"} date={formatDate(post.date)} />
-          {post.isPinned && (
+          <AuthorInfo author={"Himanshu"} date={formatDate(frontmatter.date)} />
+          {frontmatter.isPinned && (
             <div className="flex gap-x-2 items-center">
               <GiPin className="text-fluid--1 text-link-bg w-5 h-5 cursor-pointer font-bold" />
               <p className="font-bold text-fluid--1">
-                {post.isPinned && "Pinned"}
+                {frontmatter.isPinned && "Pinned"}
               </p>
             </div>
           )}
         </div>
         <Mood MoodEmoji={"🌴"} MoodText={"Feelin' fresh"} />
-        <Title>{post.title}</Title>
+        <Title>{frontmatter.title}</Title>
         <Content
           className={
             "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529]"
           }
         >
-          <MdxContent components={MdxComponent} />
+          <MDXRemote source={post.content} components={MdxComponent} />
         </Content>
       </ContentContainer>
     </TweetArticle>

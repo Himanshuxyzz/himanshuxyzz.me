@@ -1,4 +1,3 @@
-import { allCrafts } from "@/.contentlayer/generated";
 import { TweetArticle } from "@/components/common/Article";
 import {
   AuthorInfo,
@@ -11,19 +10,21 @@ import {
 import MdxComponent from "@/components/mdx";
 import { formatDate } from "@/lib/utils";
 import { notFound } from "next/navigation";
-import { useMDXComponent } from "next-contentlayer/hooks";
 import Link from "next/link";
-import Image from "next/image";
 import FeatureImg from "@/components/common/FeatureImg";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { getCraft, getCraftSlugs } from "@/lib/mdx";
 
-export default function CraftDetail({ params }: { params: { slug: string } }) {
-  const craft = allCrafts.find(
-    (craft) => craft._raw.sourceFileName.replace(".mdx", "") === params.slug
-  );
+export default async function CraftDetail({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const craft = await getCraft(params.slug);
 
   if (!craft) notFound();
 
-  const MdxContent = useMDXComponent(craft.body.code);
+  const { frontmatter } = craft;
 
   return (
     <TweetArticle>
@@ -31,14 +32,14 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
       <ContentContainer>
         <AuthorInfo
           author={"Himanshu"}
-          date={craft.date ? formatDate(craft.date) : ""}
+          date={frontmatter.date ? formatDate(frontmatter.date) : undefined}
         />
         <Mood MoodEmoji={"🎨"} MoodText={"Feelin' artsy"} />
-        <Title className={"text-center"}>{craft.title}</Title>
+        <Title className={"text-center"}>{frontmatter.title}</Title>
 
-        {craft.technologies && craft.technologies.length > 0 && (
+        {frontmatter.technologies && frontmatter.technologies.length > 0 && (
           <div className="flex flex-wrap gap-2 justify-center my-4">
-            {craft.technologies.map((tech, index) => (
+            {frontmatter.technologies.map((tech, index) => (
               <span
                 key={index}
                 className="px-3 py-1 text-sm rounded-full bg-[#f1f3f5] dark:bg-[#212529] text-[#495057] dark:text-[#ced4da]"
@@ -49,10 +50,10 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
           </div>
         )}
 
-        {craft.thumbnail && (
+        {frontmatter.thumbnail && (
           <div className="w-full my-4 flex justify-center">
             <FeatureImg
-              image={craft.thumbnail}
+              image={frontmatter.thumbnail}
               width={600}
               height={400}
               className="rounded-lg w-full"
@@ -66,11 +67,13 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
             "prose prose-light dark:prose-dark prose-a:decoration-2 prose-img:blog-article-img prose-blockquote:bg-[#f1f3f5] dark:prose-blockquote:bg-[#212529] dark:text-white"
           }
         >
-          {(craft.link || craft.appStoreLink || craft.playStoreLink) && (
+          {(frontmatter.link ||
+            frontmatter.appStoreLink ||
+            frontmatter.playStoreLink) && (
             <div className="mt-8 flex flex-wrap gap-2">
-              {craft.link && (
+              {frontmatter.link && (
                 <Link
-                  href={craft.link}
+                  href={frontmatter.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2 rounded-md bg-link-bg text-white hover:bg-opacity-90 transition-all dark:text-white"
@@ -78,9 +81,9 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
                   Visit Website
                 </Link>
               )}
-              {craft.appStoreLink && (
+              {frontmatter.appStoreLink && (
                 <Link
-                  href={craft.appStoreLink}
+                  href={frontmatter.appStoreLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2 rounded-md bg-link-bg text-white hover:bg-opacity-90 transition-all dark:text-white"
@@ -88,9 +91,9 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
                   App Store
                 </Link>
               )}
-              {craft.playStoreLink && (
+              {frontmatter.playStoreLink && (
                 <Link
-                  href={craft.playStoreLink}
+                  href={frontmatter.playStoreLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2 rounded-md bg-link-bg text-white hover:bg-opacity-90 transition-all dark:text-white"
@@ -101,30 +104,28 @@ export default function CraftDetail({ params }: { params: { slug: string } }) {
             </div>
           )}
 
-          <MdxContent components={MdxComponent} />
+          <MDXRemote source={craft.content} components={MdxComponent} />
         </Content>
       </ContentContainer>
     </TweetArticle>
   );
 }
 
-export const generateStaticParams = async () =>
-  allCrafts.map((craft) => ({
-    slug: craft._raw.sourceFileName.replace(".mdx", ""),
-  }));
+export const generateStaticParams = async () => {
+  const slugs = await getCraftSlugs();
+  return slugs.map((slug) => ({ slug }));
+};
 
 export const generateMetadata = async ({
   params,
 }: {
   params: { slug: string };
 }) => {
-  const craft = allCrafts.find(
-    (craft) => craft._raw.sourceFileName.replace(".mdx", "") === params.slug
-  );
+  const craft = await getCraft(params.slug);
 
   if (!craft) notFound();
 
   return {
-    title: craft?.title,
+    title: craft.frontmatter.title,
   };
 };

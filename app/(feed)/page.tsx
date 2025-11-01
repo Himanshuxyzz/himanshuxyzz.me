@@ -1,11 +1,16 @@
-import { allPosts } from "@/.contentlayer/generated";
 import { Post } from "@/components/common/Post";
+import { getHomepagePosts } from "@/lib/mdx";
 
-export default function Feed() {
-  if (!allPosts) return null;
+export default async function Feed() {
+  const posts = await getHomepagePosts();
+
+  if (!posts.length) return null;
+
   return (
     <>
-      {allPosts && allPosts.map((post) => <Post key={post.url} post={post} />)}
+      {posts.map((post) => (
+        <Post key={post.url} post={post} />
+      ))}
     </>
   );
 }
