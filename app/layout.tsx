@@ -15,7 +15,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://himanshuxyzz.vercel.app/"),
+  metadataBase: new URL("https://himanshuxyzz.vercel.app"),
   title: {
     default: "himanshuxyzz | Developer Portfolio",
     template: "%s | himanshuxyzz",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://himanshuxyzz.vercel.app/",
+    url: "https://himanshuxyzz.vercel.app",
     title: "himanshuxyzz | Developer Portfolio",
     description:
       "Engineer learning how to build and design scalable web applications.",
@@ -48,6 +48,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: "himanshuxyzz portfolio",
       },
+      {
+        url: "/avatar.webp",
+        width: 800,
+        height: 800,
+        alt: "himanshuxyzz avatar",
+      },
     ],
   },
   twitter: {
@@ -57,6 +63,7 @@ export const metadata: Metadata = {
       "Engineer learning how to build and design scalable web applications.",
     images: ["/feature-preppy.webp"],
     creator: "@himanshu_toppo",
+    site: "@himanshu_toppo",
   },
   robots: {
     index: true,
@@ -73,6 +80,11 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
+  },
+  themeColor: "#16191d",
+  appleWebApp: {
+    title: "himanshuxyzz",
+    statusBarStyle: "default",
   },
 };
 const BLUR_FADE_DELAY = 0.05;
