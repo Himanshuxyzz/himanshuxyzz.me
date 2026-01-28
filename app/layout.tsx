@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Outfit } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -81,11 +81,13 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
-  themeColor: "#16191d",
   appleWebApp: {
     title: "himanshuxyzz",
     statusBarStyle: "default",
   },
+};
+export const viewport: Viewport = {
+  themeColor: "#16191d",
 };
 const BLUR_FADE_DELAY = 0.05;
 
