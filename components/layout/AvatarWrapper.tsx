@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import avatar from "@/public/avatar.webp";
 import bear from "@/public/bear.svg";
-import { bioDetailsIcon } from "@/lib/constant";
+import { bioDetailsIcon, RESUME_LINK } from "@/lib/constant";
 
 type ProfileProps = {
   avatar: string | StaticImageData;
@@ -31,9 +31,7 @@ export const ResumeBtn = () => {
   return (
     <a
       className="hover:no-underline border-transparent dark:focus:border-[#f1f3f5] focus:border-[#030507] dark:focus-visible:border-[#f1f3f5] focus-visible:border-[#030507] hover:border-[#030507] dark:hover:border-[#f1f3f5] border-[3px] rounded-full text-fluid--1 text-white bg-link-bg px-3 py-[3px] leading-none font-bold text-center"
-      href={
-        "https://drive.google.com/file/d/1cmTYsPmPWAjtQz5eOKh2IH93VLSuqx41/view?usp=sharing"
-      }
+      href={RESUME_LINK}
       target="_blank"
       rel="noopener noreferrer"
     >

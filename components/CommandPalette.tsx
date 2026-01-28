@@ -18,6 +18,7 @@ import {
   FaBlog,
 } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { RESUME_LINK } from "@/lib/constant";
 
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -185,12 +186,7 @@ export default function CommandPalette() {
               <CommandItem
                 icon={<FaFileAlt />}
                 onSelect={() =>
-                  runCommand(() =>
-                    window.open(
-                      "https://drive.google.com/file/d/1cmTYsPmPWAjtQz5eOKh2IH93VLSuqx41/view?usp=sharing",
-                      "_blank",
-                    ),
-                  )
+                  runCommand(() => window.open(RESUME_LINK, "_blank"))
                 }
               >
                 View Resume
