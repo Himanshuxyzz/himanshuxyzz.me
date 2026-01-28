@@ -11,7 +11,9 @@ const Header = () => {
         <ContentWrapper className={"w-content px-4"}>
           <AvatarWrapper
             name={"Himanshu Toppo"}
-            bio={"I bring ideas to life with code! ✨"}
+            bio={
+              "Software Engineer building polished mobile & web experiences. ✨"
+            }
           />
         </ContentWrapper>
       </header>
