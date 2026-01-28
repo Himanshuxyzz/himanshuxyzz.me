@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-8">
+    <section id="experience" className="py-8 px-4 sm:px-0">
       <h2 className="text-2xl font-bold mb-6">Experience</h2>
       <div className="w-full border dark:border-neutral-800 border-neutral-200 p-5 sm:p-6 rounded-lg">
         {/* Gigbei Experience */}

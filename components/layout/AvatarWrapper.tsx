@@ -29,12 +29,16 @@ export const Profile: React.FC<ProfileProps> = ({ avatar }) => {
 
 export const ResumeBtn = () => {
   return (
-    <Link
+    <a
       className="hover:no-underline border-transparent dark:focus:border-[#f1f3f5] focus:border-[#030507] dark:focus-visible:border-[#f1f3f5] focus-visible:border-[#030507] hover:border-[#030507] dark:hover:border-[#f1f3f5] border-[3px] rounded-full text-fluid--1 text-white bg-link-bg px-3 py-[3px] leading-none font-bold text-center"
-      href={"/resume"}
+      href={
+        "https://drive.google.com/file/d/1cmTYsPmPWAjtQz5eOKh2IH93VLSuqx41/view?usp=sharing"
+      }
+      target="_blank"
+      rel="noopener noreferrer"
     >
       Resume
-    </Link>
+    </a>
   );
 };
 
@@ -72,9 +76,9 @@ const Hobby = () => {
       <span className="text-[#faa780] text-sm md:text-lg font-bold dark:shadow-none">
         #Anime.
       </span>
-      <span className="text-[#C1C2FB] text-sm md:text-lg font-bold dark:shadow-none ">
+      {/* <span className="text-[#C1C2FB] text-sm md:text-lg font-bold dark:shadow-none ">
         #Food.
-      </span>
+      </span> */}
       <span className="text-[#F6C67E] text-sm md:text-lg font-bold dark:shadow-none">
         #Gaming.
       </span>

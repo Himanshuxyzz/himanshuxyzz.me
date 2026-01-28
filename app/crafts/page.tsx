@@ -1,10 +1,13 @@
+import { getCrafts } from "@/lib/mdx";
 import { formatDate } from "@/lib/utils";
 import { compareDesc } from "date-fns";
-import { getCrafts } from "@/lib/mdx";
 import Link from "next/link";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { BlurFade } from "@/components/layout/BlurFadeWrapper";
 
-export default async function CraftsSection() {
+const BLUR_FADE_DELAY = 0.05;
+
+export default async function CraftsPage() {
   const crafts = (await getCrafts()).sort((a, b) => {
     const aDate = a.frontmatter.date ? new Date(a.frontmatter.date) : null;
     const bDate = b.frontmatter.date ? new Date(b.frontmatter.date) : null;
@@ -17,14 +20,15 @@ export default async function CraftsSection() {
   });
 
   return (
-    <section id="crafts" className="py-8 px-4 sm:px-0">
-      <h2 className="text-2xl font-bold mb-6">Crafts</h2>
+    <div className="pt-8 pb-16 px-4 sm:px-0">
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <h1 className="text-3xl font-bold mb-8 saturate-200">Crafts</h1>
+      </BlurFade>
 
-      {crafts.length > 0 ? (
-        <div className="space-y-3">
-          {crafts.map((craft) => (
+      <div className="space-y-4">
+        {crafts.map((craft, idx) => (
+          <BlurFade key={craft.slug} delay={BLUR_FADE_DELAY * (idx + 2)}>
             <Link
-              key={craft.slug}
               href={craft.url}
               className="group flex items-center justify-between p-4 border dark:border-neutral-800 border-neutral-200 rounded-lg hover:bg-[#f8f9fa] dark:hover:bg-[#212529] transition-colors"
             >
@@ -40,25 +44,18 @@ export default async function CraftsSection() {
               </div>
               <MdOutlineArrowOutward className="w-5 h-5 text-neutral-400 group-hover:text-link-bg transition-colors shrink-0" />
             </Link>
-          ))}
-        </div>
-      ) : (
-        <div className="py-12 text-center border dark:border-neutral-800 border-neutral-200 rounded-lg">
-          <div className="text-xl font-bold mb-2">🚧 Work in Progress 🚧</div>
-          <p className="text-neutral-500 dark:text-neutral-400">
-            Exciting crafts coming soon! Please check back later.
-          </p>
-        </div>
-      )}
+          </BlurFade>
+        ))}
+      </div>
 
-      {crafts.length > 0 && (
+      <div className="mt-12 border-t dark:border-neutral-800 border-neutral-200 pt-8">
         <Link
-          href="/crafts"
-          className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-link-bg hover:underline"
+          href="/"
+          className="inline-flex items-center gap-1 text-sm font-medium text-neutral-500 hover:text-link-bg transition-colors"
         >
-          View all crafts <MdOutlineArrowOutward className="w-4 h-4" />
+          ← Back to home
         </Link>
-      )}
-    </section>
+      </div>
+    </div>
   );
 }

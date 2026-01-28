@@ -14,7 +14,7 @@ export default async function BlogSection() {
   const hasMorePosts = posts.length > 4;
 
   return (
-    <section id="blog" className="py-8">
+    <section id="blog" className="py-8 px-4 sm:px-0">
       <h2 className="text-2xl font-bold mb-6">Blog</h2>
 
       <div className="space-y-3">
@@ -37,14 +37,12 @@ export default async function BlogSection() {
         ))}
       </div>
 
-      {hasMorePosts && (
-        <Link
-          href="/blog"
-          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-link-bg hover:underline"
-        >
-          View all posts →
-        </Link>
-      )}
+      <Link
+        href="/blog"
+        className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-link-bg hover:underline"
+      >
+        View all posts <MdOutlineArrowOutward className="w-4 h-4" />
+      </Link>
     </section>
   );
 }

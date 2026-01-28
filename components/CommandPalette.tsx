@@ -185,12 +185,15 @@ export default function CommandPalette() {
               <CommandItem
                 icon={<FaFileAlt />}
                 onSelect={() =>
-                  runCommand(
-                    () => (window.location.href = "/resume-latest.pdf"),
+                  runCommand(() =>
+                    window.open(
+                      "https://drive.google.com/file/d/1cmTYsPmPWAjtQz5eOKh2IH93VLSuqx41/view?usp=sharing",
+                      "_blank",
+                    ),
                   )
                 }
               >
-                Download Resume
+                View Resume
               </CommandItem>
             </Command.Group>
           </Command.List>
