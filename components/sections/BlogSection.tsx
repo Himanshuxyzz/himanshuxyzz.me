@@ -4,17 +4,21 @@ import { getBlogPosts } from "@/lib/mdx";
 import Link from "next/link";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-export default async function Blog() {
+export default async function BlogSection() {
   const posts = (await getBlogPosts()).sort((a, b) =>
     compareDesc(new Date(a.frontmatter.date), new Date(b.frontmatter.date)),
   );
 
-  return (
-    <div className="py-8">
-      <h1 className="text-3xl font-bold mb-8">All Blog Posts</h1>
+  // Show only first 4 posts on homepage
+  const displayPosts = posts.slice(0, 4);
+  const hasMorePosts = posts.length > 4;
 
-      <div className="space-y-4">
-        {posts.map((post) => (
+  return (
+    <section id="blog" className="py-8">
+      <h2 className="text-2xl font-bold mb-6">Blog</h2>
+
+      <div className="space-y-3">
+        {displayPosts.map((post) => (
           <Link
             key={post.slug}
             href={post.url}
@@ -33,12 +37,14 @@ export default async function Blog() {
         ))}
       </div>
 
-      <Link
-        href="/"
-        className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-link-bg hover:underline"
-      >
-        ← Back to home
-      </Link>
-    </div>
+      {hasMorePosts && (
+        <Link
+          href="/blog"
+          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-link-bg hover:underline"
+        >
+          View all posts →
+        </Link>
+      )}
+    </section>
   );
 }

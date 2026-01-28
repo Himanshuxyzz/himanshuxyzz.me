@@ -42,5 +42,49 @@ body {
     --text-fluid-3: clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem);
     --text-1: #f1f3f5;
     --text-heading-1: clamp(1.2rem, calc(1.07rem + 0.63vw), 1.56rem);
+    /* Expo out easing for smooth animation */
+    --expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
+/* View Transitions API - Circular Theme Reveal */
+/* Prevent pointer events during transition */
+::view-transition {
+  pointer-events: none;
+}
+
+/* Animation duration for the whole transition */
+::view-transition-group(root) {
+  animation-duration: 1s;
+  animation-timing-function: var(--expo-out);
+}
+
+/* Disable default crossfade - we handle it with mask */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Old view stays in place behind */
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+/* New view reveals on top with circular mask */
+::view-transition-new(root) {
+  z-index: 2;
+  animation: view-reveal 1s var(--expo-out) forwards;
+  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur in="SourceGraphic" stdDeviation="3"/></filter></defs><circle cx="20" cy="20" r="18" fill="white" filter="url(%23blur)"/></svg>');
+  mask-repeat: no-repeat;
+  mask-position: center center;
+}
+
+@keyframes view-reveal {
+  0% {
+    mask-size: 0;
+  }
+  100% {
+    mask-size: 250vmax;
   }
 }

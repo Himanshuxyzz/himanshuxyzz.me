@@ -8,6 +8,7 @@ import Main from "../components/common/Main";
 import { TanstackProvider } from "@/components/providers/tan-stack-provider";
 import { BlurFade } from "@/components/layout/BlurFadeWrapper";
 import { Analytics } from "@vercel/analytics/react";
+import CommandPalette from "@/components/CommandPalette";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -32,7 +33,7 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
+            disableTransitionOnChange={false}
             storageKey="theme"
           >
             <TopProgress>
@@ -42,6 +43,7 @@ export default function RootLayout({
                   <BlurFade delay={BLUR_FADE_DELAY}>{children}</BlurFade>
                 </Main>
               </main>
+              <CommandPalette />
             </TopProgress>
           </ThemeProvider>
         </TanstackProvider>

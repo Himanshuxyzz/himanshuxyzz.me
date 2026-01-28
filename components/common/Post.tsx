@@ -12,7 +12,7 @@ export const Post = ({ post }: { post: HomepagePost }) => {
   const { frontmatter } = post;
   return (
     <TweetArticle
-      className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}
+      // className={"dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"}
       key={post.url}
     >
       <UserProfile />
@@ -49,7 +49,11 @@ type ContentContainerProps = {
 export const ContentContainer: React.FC<ContentContainerProps> = ({
   children,
 }) => {
-  return <div className="flex flex-col gap-y-1 leading-tight">{children}</div>;
+  return (
+    <div className="flex flex-col gap-y-1 leading-tight min-w-0">
+      {children}
+    </div>
+  );
 };
 
 type ContentProps = {

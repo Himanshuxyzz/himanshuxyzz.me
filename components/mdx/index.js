@@ -3,7 +3,7 @@ import FeatureImg from "@/components/common/FeatureImg";
 import React from "react";
 
 const customImage = ({ ...props }) => {
-  return <Image {...props} />;
+  return <Image alt="custom-image" {...props} />;
 };
 
 const NameHighlight = ({ children }) => {

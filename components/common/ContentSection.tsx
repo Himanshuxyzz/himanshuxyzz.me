@@ -1,29 +1,4 @@
 import ContentWrapper from "@/components/layout/ContentWrapper";
-import NavLink from "./NavLink";
-import { NavLinkRoutes } from "@/lib/constant";
-
-const NavTab = () => {
-  return (
-    <>
-      <ul className="max-w-full grid grid-flow-col auto-cols-[1fr] items-center text-fluid--1 overflow-auto">
-        {NavLinkRoutes.map((navlink, idx) => {
-          return (
-            <li
-              key={navlink.id + idx}
-              className="dark:hover:bg-[#212529] hover:bg-[#f1f3f5]  flex-grow"
-            >
-              <NavLink
-                key={navlink.id}
-                href={navlink.route}
-                name={navlink.name}
-              />
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
-};
 
 type ContentSectionProps = {
   children: React.ReactNode;
@@ -32,9 +7,8 @@ type ContentSectionProps = {
 const ContentSection: React.FC<ContentSectionProps> = ({ children }) => {
   return (
     <ContentWrapper
-      className={"w-content flex flex-col justify-center pt-4 gap-8 "}
+      className={"w-content flex flex-col justify-center pt-8 gap-8 pb-12"}
     >
-      <NavTab />
       {children}
     </ContentWrapper>
   );
