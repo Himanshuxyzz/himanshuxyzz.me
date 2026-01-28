@@ -15,8 +15,65 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "himanshuxyzz",
-  description: "portfolio",
+  metadataBase: new URL("https://himanshuxyzz.vercel.app/"),
+  title: {
+    default: "himanshuxyzz | Developer Portfolio",
+    template: "%s | himanshuxyzz",
+  },
+  description:
+    "Engineer learning how to build and design scalable web applications with high performance and better user experience.",
+  keywords: [
+    "Himanshu",
+    "himanshuxyzz",
+    "Developer",
+    "Portfolio",
+    "Engineer",
+    "React Native",
+    "Next.js",
+  ],
+  authors: [{ name: "Himanshu" }],
+  creator: "Himanshu",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://himanshuxyzz.vercel.app/",
+    title: "himanshuxyzz | Developer Portfolio",
+    description:
+      "Engineer learning how to build and design scalable web applications.",
+    siteName: "himanshuxyzz",
+    images: [
+      {
+        url: "/feature-preppy.webp",
+        width: 1200,
+        height: 630,
+        alt: "himanshuxyzz portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "himanshuxyzz | Developer Portfolio",
+    description:
+      "Engineer learning how to build and design scalable web applications.",
+    images: ["/feature-preppy.webp"],
+    creator: "@himanshu_toppo",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 const BLUR_FADE_DELAY = 0.05;
 

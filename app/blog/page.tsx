@@ -3,6 +3,13 @@ import { compareDesc } from "date-fns";
 import { getBlogPosts } from "@/lib/mdx";
 import Link from "next/link";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Read my latest thoughts on software development, design, and engineering.",
+};
 
 export default async function Blog() {
   const posts = (await getBlogPosts()).sort((a, b) =>

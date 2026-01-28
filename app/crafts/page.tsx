@@ -4,6 +4,12 @@ import { compareDesc } from "date-fns";
 import Link from "next/link";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { BlurFade } from "@/components/layout/BlurFadeWrapper";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Crafts",
+  description: "A showcase of my projects, experiments, and digital crafts.",
+};
 
 const BLUR_FADE_DELAY = 0.05;
 
