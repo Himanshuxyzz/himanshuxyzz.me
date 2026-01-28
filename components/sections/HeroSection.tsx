@@ -24,7 +24,9 @@ export default async function HeroSection() {
 
   return (
     <section id="hero">
-      <TweetArticle className="dark:hover:bg-[#212529] hover:bg-[#f1f3f5]">
+      <TweetArticle
+      // className="dark:hover:bg-[#212529] hover:bg-[#f1f3f5]"
+      >
         <UserProfile />
         <ContentContainer>
           <div className="flex justify-between items-center">
